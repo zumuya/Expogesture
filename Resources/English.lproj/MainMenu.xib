@@ -821,26 +821,6 @@
                                     <rect key="frame" x="10" y="33" width="651" height="446"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="464">
-                                            <rect key="frame" x="18" y="272" width="463" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Use polling to track mouse pointer  (Polling Mode)" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="877">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="systemBold"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <binding destination="728" name="value" keyPath="values.UsePollingToTrackPointer" id="800"/>
-                                            </connections>
-                                        </button>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="463">
-                                            <rect key="frame" x="38" y="224" width="595" height="42"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Check this if you are using Wacom Tablets or USB Overdrive." id="876">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="797">
                                             <rect key="frame" x="18" y="359" width="463" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -910,7 +890,6 @@
                 <outlet property="rightLabel" destination="735" id="778"/>
                 <outlet property="rightMenuLabel" destination="817" id="824"/>
                 <outlet property="rightPseudoPopUp" destination="596" id="756"/>
-                <outlet property="usePolling" destination="464" id="466"/>
                 <outlet property="verticalCapture" destination="744" id="753"/>
                 <outlet property="verticalLabel" destination="743" id="781"/>
                 <outlet property="verticalMenuLabel" destination="822" id="827"/>
