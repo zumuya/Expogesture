@@ -18,7 +18,6 @@
 #import "EGNotificationView.h"
 #import "HIDManager.h"
 #import "FloatingWindow.h"
-#import "AppSwitchView.h"
 #import "NSScreen-EGExt.h"
 
 // Note: The order of EGMoveDirection constants are important;
@@ -72,25 +71,6 @@ static const int GestureTemplateCount
     for (idx = 0; idx < GestureTemplateCount; idx++)
         gestureProgresses[idx] = 0;
 }
-
-- _showAppSwitch
-{
-    ProcessSerialNumber psn;
-
-    // Preserve current front process
-    GetFrontProcess(&psn);
-    [appSwitchView setFrontProcess:psn];
-
-    // Make Expogesture itself a front application
-    [NSApp activateIgnoringOtherApps:YES];
-
-    // Show AppSwitch window...
-    [appSwitchWindow setFrameCenteredAt:[NSEvent mouseLocation]];
-    [appSwitchWindow makeKeyAndOrderFront:self];
-    
-    return self;
-}
-
 
 - (void)_showNotifWindowWithText:(NSString *)text
 {
@@ -309,9 +289,6 @@ pickMenu:
         break;
     case HotkeyNormalEvent:
         [self _generateKeyEvent:thisKey];
-        break;
-    case HotkeyAppSwitch:
-        [self _showAppSwitch];
         break;
 	case HotkeyMenuItem:
 		[self _pickMenuItemForPseudoEvent:thisKey];
@@ -778,13 +755,8 @@ void _reopenApplication(ProcessSerialNumber psn)
 
 - setGestureSizeMin:(int)min
 {
-    gestureSizeMin = min;
-    return self;
-}
-
-- (AppSwitchView *)appSwitchView
-{
-    return appSwitchView;
+	gestureSizeMin = min;
+	return self;
 }
 
 @end

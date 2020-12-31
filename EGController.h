@@ -10,7 +10,6 @@
 @class EGPreference;
 @class EGNotificationView;
 @class FloatingWindow;
-@class AppSwitchView;
 
 @interface EGController : NSObject
 {
@@ -18,8 +17,6 @@
     IBOutlet EGNotificationView *notifView;
     IBOutlet NSMenu *statusMenu;
     IBOutlet FloatingWindow *notifWindow;
-    IBOutlet FloatingWindow *appSwitchWindow;
-    IBOutlet AppSwitchView *appSwitchView;
     
     NSMutableDictionary *eventKeyDefs;
     NSArray *keyDefsGlobal;
@@ -60,6 +57,5 @@
 - (NSMutableDictionary *)eventKeyDefs;
 - (int)gestureSizeMin;
 - setGestureSizeMin:(int)min;
-- (AppSwitchView *)appSwitchView;
 
 @end

@@ -16,7 +16,6 @@
 		5D4B1C00054A9C3100BEBFF4 /* HIDElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB5B85B04C6A2C600A81011 /* HIDElement.h */; };
 		5D4B1C01054A9C3100BEBFF4 /* HIDManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4DDAE104CEA9FD00A81011 /* HIDManager.h */; };
 		5D4B1C02054A9C3100BEBFF4 /* EGCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DCB912304E3433300A81011 /* EGCommon.h */; };
-		5D4B1C03054A9C3100BEBFF4 /* AppSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4C601304E8B79200A81011 /* AppSwitchView.h */; };
 		5D4B1C04054A9C3100BEBFF4 /* FloatingWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4C601504E8B79200A81011 /* FloatingWindow.h */; };
 		5D4B1C05054A9C3100BEBFF4 /* EGAppTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD84D6504F3680700A81011 /* EGAppTableView.h */; };
 		5D4B1C07054A9C3100BEBFF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DF14A6804AFAE6900A81011 /* InfoPlist.strings */; };
@@ -38,7 +37,6 @@
 		5D4B1C1A054A9C3100BEBFF4 /* HIDDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5B85504C69C3500A81011 /* HIDDevice.m */; };
 		5D4B1C1B054A9C3100BEBFF4 /* HIDElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5B85A04C6A2C600A81011 /* HIDElement.m */; };
 		5D4B1C1C054A9C3100BEBFF4 /* HIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DDAE204CEA9FD00A81011 /* HIDManager.m */; };
-		5D4B1C1D054A9C3100BEBFF4 /* AppSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C601404E8B79200A81011 /* AppSwitchView.m */; };
 		5D4B1C1E054A9C3100BEBFF4 /* FloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C601604E8B79200A81011 /* FloatingWindow.m */; };
 		5D4B1C1F054A9C3100BEBFF4 /* EGAppTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD84D6604F3680700A81011 /* EGAppTableView.m */; };
 		5D4B1C21054A9C3100BEBFF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -69,8 +67,6 @@
 		5D1B807604F4EE7900A81011 /* ZPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZPath.png; sourceTree = "<group>"; };
 		5D1B807804F4EE7F00A81011 /* NPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NPath.png; sourceTree = "<group>"; };
 		5D4B1C26054A9C3100BEBFF4 /* Expogesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expogesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D4C601304E8B79200A81011 /* AppSwitchView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AppSwitchView.h; sourceTree = "<group>"; };
-		5D4C601404E8B79200A81011 /* AppSwitchView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = AppSwitchView.m; sourceTree = "<group>"; };
 		5D4C601504E8B79200A81011 /* FloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = FloatingWindow.h; sourceTree = "<group>"; };
 		5D4C601604E8B79200A81011 /* FloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = FloatingWindow.m; sourceTree = "<group>"; };
 		5D4DDAE104CEA9FD00A81011 /* HIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDManager.h; sourceTree = "<group>"; };
@@ -150,8 +146,6 @@
 				5DB5B85504C69C3500A81011 /* HIDDevice.m */,
 				5DB5B85B04C6A2C600A81011 /* HIDElement.h */,
 				5DB5B85A04C6A2C600A81011 /* HIDElement.m */,
-				5D4C601304E8B79200A81011 /* AppSwitchView.h */,
-				5D4C601404E8B79200A81011 /* AppSwitchView.m */,
 				5D4C601504E8B79200A81011 /* FloatingWindow.h */,
 				5D4C601604E8B79200A81011 /* FloatingWindow.m */,
 				5DD84D6504F3680700A81011 /* EGAppTableView.h */,
@@ -262,7 +256,6 @@
 				5D4B1C00054A9C3100BEBFF4 /* HIDElement.h in Headers */,
 				5D4B1C01054A9C3100BEBFF4 /* HIDManager.h in Headers */,
 				5D4B1C02054A9C3100BEBFF4 /* EGCommon.h in Headers */,
-				5D4B1C03054A9C3100BEBFF4 /* AppSwitchView.h in Headers */,
 				5D4B1C04054A9C3100BEBFF4 /* FloatingWindow.h in Headers */,
 				5D4B1C05054A9C3100BEBFF4 /* EGAppTableView.h in Headers */,
 				5D80A582054E93B9002A1A0E /* HotkeyCapture.h in Headers */,
@@ -356,7 +349,6 @@
 				5D4B1C1A054A9C3100BEBFF4 /* HIDDevice.m in Sources */,
 				5D4B1C1B054A9C3100BEBFF4 /* HIDElement.m in Sources */,
 				5D4B1C1C054A9C3100BEBFF4 /* HIDManager.m in Sources */,
-				5D4B1C1D054A9C3100BEBFF4 /* AppSwitchView.m in Sources */,
 				5D4B1C1E054A9C3100BEBFF4 /* FloatingWindow.m in Sources */,
 				5D4B1C1F054A9C3100BEBFF4 /* EGAppTableView.m in Sources */,
 				5D80A583054E93B9002A1A0E /* HotkeyCapture.m in Sources */,

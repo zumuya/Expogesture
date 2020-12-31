@@ -227,8 +227,6 @@
         </menu>
         <customObject id="197" userLabel="EGController" customClass="EGController">
             <connections>
-                <outlet property="appSwitchView" destination="653" id="660"/>
-                <outlet property="appSwitchWindow" destination="650" id="652"/>
                 <outlet property="notifView" destination="656" id="662"/>
                 <outlet property="notifWindow" destination="654" id="659"/>
                 <outlet property="prefController" destination="276" id="277"/>
@@ -252,7 +250,7 @@
                             <tabViewItem label="Actions" identifier="1" id="376">
                                 <view key="view" id="379">
                                     <rect key="frame" x="10" y="33" width="651" height="446"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="402">
                                             <rect key="frame" x="35" y="148" width="49" height="44"/>
@@ -278,7 +276,7 @@
                                         <scrollView fixedFrame="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="407">
                                             <rect key="frame" x="20" y="265" width="611" height="136"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <clipView key="contentView" id="JDb-OA-EHi">
+                                            <clipView key="contentView" drawsBackground="NO" id="JDb-OA-EHi">
                                                 <rect key="frame" x="1" y="1" width="609" height="134"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
@@ -301,7 +299,7 @@
                                                                 </textFieldCell>
                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                             </tableColumn>
-                                                            <tableColumn identifier="AppPath" width="369" minWidth="26" maxWidth="1000" id="416">
+                                                            <tableColumn identifier="AppPath" width="340" minWidth="26" maxWidth="1000" id="416">
                                                                 <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Location">
                                                                     <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -321,6 +319,7 @@
                                                         </connections>
                                                     </tableView>
                                                 </subviews>
+                                                <nil key="backgroundColor"/>
                                             </clipView>
                                             <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="885">
                                                 <rect key="frame" x="1" y="119" width="609" height="16"/>
@@ -330,7 +329,7 @@
                                                 <rect key="frame" x="594" y="24" width="16" height="111"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
-                                            <tableHeaderView key="headerView" id="886">
+                                            <tableHeaderView key="headerView" wantsLayer="YES" id="886">
                                                 <rect key="frame" x="0.0" y="0.0" width="609" height="23"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </tableHeaderView>
@@ -881,6 +880,7 @@
             <connections>
                 <outlet property="delegate" destination="276" id="290"/>
             </connections>
+            <point key="canvasLocation" x="-265" y="496"/>
         </window>
         <customObject id="276" userLabel="EGPreference" customClass="EGPreference">
             <connections>
@@ -944,22 +944,6 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="650" userLabel="AppSwitchWindow" customClass="FloatingWindow">
-            <windowStyleMask key="styleMask" titled="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="110" y="387" width="340" height="340"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
-            <view key="contentView" id="651">
-                <rect key="frame" x="0.0" y="0.0" width="340" height="340"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="653" customClass="AppSwitchView">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="340"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </customView>
-                </subviews>
-            </view>
-        </window>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="654" userLabel="NotifWindow" customClass="FloatingWindow">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -1012,11 +996,11 @@
         </view>
     </objects>
     <resources>
-        <image name="Clockwise" width="128" height="128"/>
-        <image name="CounterClockwise" width="128" height="128"/>
-        <image name="Horizontal" width="128" height="128"/>
-        <image name="NPath" width="128" height="128"/>
-        <image name="Vertical" width="128" height="128"/>
-        <image name="ZPath" width="128" height="128"/>
+        <image name="Clockwise" width="96" height="96"/>
+        <image name="CounterClockwise" width="96" height="96"/>
+        <image name="Horizontal" width="96" height="96"/>
+        <image name="NPath" width="96" height="96"/>
+        <image name="Vertical" width="96" height="96"/>
+        <image name="ZPath" width="96" height="96"/>
     </resources>
 </document>

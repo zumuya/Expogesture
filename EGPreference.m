@@ -10,7 +10,6 @@
 #import "EGController.h"
 #import "HotkeyEvent.h"
 #import "HotkeyCapture.h"
-#import "AppSwitchView.h"
 
 @implementation EGPreference
 
@@ -54,8 +53,6 @@
                 action:nil keyEquivalent:@""] setTag:HotkeyNormalEvent];
         [[menu addItemWithTitle:NSLocalizedString(@"Pick A Menu Item", @"")
                 action:nil keyEquivalent:@""] setTag:HotkeyMenuItem];
-        [[menu addItemWithTitle:NSLocalizedString(@"Task Switch", @"")
-                action:nil keyEquivalent:@""] setTag:HotkeyAppSwitch];
         [pseudoPop setMenu:menu];
         [pseudoPop selectItemAtIndex:[pseudoPop indexOfItemWithTag:et]];
 

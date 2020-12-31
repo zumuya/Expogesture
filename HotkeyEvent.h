@@ -18,11 +18,11 @@ extern struct hotkeyDef_t hotkeyDefs[];
 extern int hotkeyDefsCount;
 
 typedef enum _HotkeyPseudoEventType {
-    HotkeyInherit = -1,
-    HotkeyDisabled = 0,
-    HotkeyNormalEvent,
-    HotkeyAppSwitch,
-	HotkeyMenuItem,
+	HotkeyInherit = -1,
+	HotkeyDisabled = 0,
+	HotkeyNormalEvent = 1,
+	//HotkeyAppSwitch = 2,
+	HotkeyMenuItem = 3,
 } HotkeyPseudoEventType;
 
 @interface HotkeyEvent : NSObject <NSCopying>
