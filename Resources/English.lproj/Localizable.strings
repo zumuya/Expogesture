@@ -1,0 +1,35 @@
+/*
+ *  Browse this file with Lucida Grande font - 
+ *  some special characters will be seen as blank with other fonts
+ *
+ *  THIS FILE SHOULD BE ENCODED IN UTF-8 OR UTF-16
+ */
+
+"Ctrl" = "⌃";
+"Alt" = "⌥";
+"Cmd" = "⌘";
+"Shift" = "⇧";
+
+"Delete" = "⌫";
+"Del" = "⌦";
+
+"Left" = "←";
+"Right" = "→";
+"Up" = "↑";
+"Down" = "↓";
+
+"Yes" = "Yes";
+"Cancel" = "Cancel";
+
+"(Global Definitions)" = "(Global Definitions)";
+"Remove Application" = "Remove Application";
+"Remove %@?" = "Are you sure to remove action definitons for %@？";
+"Use Global Setting" = "Use Global Setting";
+"Disabled" = "Disabled";
+"Send Key Event" = "Send Key Event";
+"Task Switch" = "Task Switch";
+
+"Show" = "Show";
+"Hide" = "Hide";
+"Hide Others" = "Hide Others";
+"Quit" = "Quit";

@@ -1,0 +1,38 @@
+/*
+ *  Browse this file with Lucida Grande font - 
+ *  some special characters will be seen as blank with other fonts
+ *
+ *  THIS FILE SHOULD BE ENCODED IN UTF-8 OR UTF-16
+ */
+
+"Ctrl" = "⌃";
+"Alt" = "⌥";
+"Cmd" = "⌘";
+"Shift" = "⇧";
+
+"Delete" = "⌫";
+"Del" = "⌦";
+
+"Left" = "←";
+"Right" = "→";
+"Up" = "↑";
+"Down" = "↓";
+
+"Yes" = "はい";
+"Cancel" = "キャンセル";
+
+"(Global Definitions)" = "(基本設定)";
+"Remove Application" = "アプリケーション削除";
+"Remove %@?" = "%@ のアクション定義を削除しますか？";
+"Use Global Setting" = "基本設定を使用";
+"Disabled" = "無効";
+"Send Key Event" = "キーイベント送信";
+"Pick A Menu Item" = "メニュー項目を実行";
+"Task Switch" = "タスクスイッチ";
+"Key Sent" = "送信するキー";
+"Menu Label" = "項目名";
+
+"Show" = "表示";
+"Hide" = "隠す";
+"Hide Others" = "他を隠す";
+"Quit" = "終了";

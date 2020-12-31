@@ -1,0 +1,39 @@
+"About Expogesture" = "關於 Expogesture";
+"Preferences..." = "偏好設定...";
+"Quit Expogesture" = "結束 Expogesture";
+
+"Expogesture Help" = "Expogesture 輔助說明";
+
+"Expogesture Preferences" = "Expogesture 偏好設定";
+
+"Actions" = "動作";
+"Per Application Definitions" = "每個應用程式的定義值";
+"Name" = "名稱";
+"Location" = "位置";
+"Add..." = "新增...";
+"Remove" = "移除";
+"Apply" = "套用";
+"Actions on Gestures" = "滑鼠手勢動作";
+"Like an Alphabet 'Z'" = "Like an Alphabet 'Z'";
+"Like an Alphabet 'N'" = "Like an Alphabet 'N'";
+"Menu Label" = "選單項目名稱";
+
+"General" = "一般";
+"Gesture Sensitivity" = "滑鼠手勢敏感度";
+"Small" = "較低";
+"Big" = "較高";
+"Notification Window" = "通知視窗";
+"Center" = "置中";
+"Upper-Right" = "左上";
+"Upper-Left" = "右上";
+"Lower-Right" = "左下";
+"Lower-Left" = "右下";
+"Bring all windows to front" = "將所有視窗移至最前";
+"Create new document if none" = "製作新文件（若沒有的話）";
+
+"Others" = "其他";
+"Settings on this page will take effect after restaring Expogesture." = "這個頁面的設定將於 Expogesture 重新啟動後生效。";
+"Show status bar menu" = "顯示狀態列選單";
+"You can access this preference panel by double clicking Expogester icon in Finder, even when status bar menu is not visible." = "您可以在 Finder 連按兩下 Expogesture 圖像來存取這個偏好設定面板，甚至當狀態列選單沒有顯示時。";
+"Use polling to track mouse pointer  (Polling Mode)" = "使用輪詢模式來追蹤滑鼠指標  (Polling Mode)";
+"Check this if you are using Wacom Tablets or USB Overdrive." = "如果您在使用 Wacom Tablets 或 USB Overdrive，請勾選此項。";

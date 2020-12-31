@@ -1,0 +1,39 @@
+"About Expogesture" = "Expogesture について";
+"Preferences..." = "環境設定...";
+"Quit Expogesture" = "Expogesture を終了";
+
+"Expogesture Help" = "Expogesture ヘルプ";
+
+"Expogesture Preferences" = "Expogesture 環境設定";
+
+"Actions" = "アクション";
+"Per Application Definitions" = "アプリケーション定義";
+"Name" = "名前";
+"Location" = "場所";
+"Add..." = "追加...";
+"Remove" = "削除";
+"Apply" = "適用";
+"Actions on Gestures" = "ジェスチャーのアクション";
+"Like an Alphabet 'Z'" = "アルファベットの 'Z' のように描きます";
+"Like an Alphabet 'N'" = "アルファベットの 'N' のように描きます";
+"Menu Label" = "メニュー項目名";
+
+"General" = "一般";
+"Gesture Sensitivity" = "ジェスチャーの感度";
+"Small" = "小さい";
+"Big" = "大きい";
+"Notification Window" = "通知ウインドウ";
+"Center" = "中央";
+"Upper-Right" = "左上";
+"Upper-Left" = "右上";
+"Lower-Right" = "左下";
+"Lower-Left" = "右下";
+"Bring all windows to front" = "全てのウインドウを前面に";
+"Create new document if none" = "ドキュメントがない場合に新規作成";
+
+"Others" = "その他";
+"Settings on this page will take effect after restaring Expogesture." = "このページの設定はExpogestureを再起動後に有効になります。";
+"Show status bar menu" = "ステータスバーにメニューを表示する";
+"You can access this preference panel by double clicking Expogester icon in Finder, even when status bar menu is not visible." = "FinderでExpogestureのアイコンをダブルクリックすると、ステータスバーにメニューがない場合でもこの環境設定パネルを呼び出せます。";
+"Use polling to track mouse pointer  (Polling Mode)" = "マウスポインタの移動をポーリングで検出する (ポーリングモード)";
+"Check this if you are using Wacom Tablets or USB Overdrive." = "ワコムのタブレットや、USB Overdriveを使用している場合には、この項目をチェックしてください。";

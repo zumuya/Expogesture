@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleExecutable</key>
+	<string>Expogesture</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Expogesture version 1.1.4b, Copyright 2003-2006 NAKAHASHI Ichiro.</string>
+	<key>CFBundleIconFile</key>
+	<string>Expogesture</string>
+	<key>CFBundleIdentifier</key>
+	<string>org.nnip.Expogesture</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>Version 1.1.4b</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>41</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2003-2006 NAKAHASHI Ichiro.</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>NSUIElement</key>
+	<string>1</string>
+</dict>
+</plist>

@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D4B1BFA054A9C3100BEBFF4 /* Expogesture_Prefix.h in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* Expogesture_Prefix.h */; };
+		5D4B1BFB054A9C3100BEBFF4 /* EGController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB17E6704AFAA9300A81011 /* EGController.h */; };
+		5D4B1BFC054A9C3100BEBFF4 /* EGPreference.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D66B2A604AFFADA00A81011 /* EGPreference.h */; };
+		5D4B1BFD054A9C3100BEBFF4 /* HotkeyEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D66B2A904AFFE6700A81011 /* HotkeyEvent.h */; };
+		5D4B1BFE054A9C3100BEBFF4 /* EGNotificationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBD94F404B85F1700A81011 /* EGNotificationView.h */; };
+		5D4B1BFF054A9C3100BEBFF4 /* HIDDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB5B85404C69C3500A81011 /* HIDDevice.h */; };
+		5D4B1C00054A9C3100BEBFF4 /* HIDElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DB5B85B04C6A2C600A81011 /* HIDElement.h */; };
+		5D4B1C01054A9C3100BEBFF4 /* HIDManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4DDAE104CEA9FD00A81011 /* HIDManager.h */; };
+		5D4B1C02054A9C3100BEBFF4 /* EGCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DCB912304E3433300A81011 /* EGCommon.h */; };
+		5D4B1C03054A9C3100BEBFF4 /* AppSwitchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4C601304E8B79200A81011 /* AppSwitchView.h */; };
+		5D4B1C04054A9C3100BEBFF4 /* FloatingWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D4C601504E8B79200A81011 /* FloatingWindow.h */; };
+		5D4B1C05054A9C3100BEBFF4 /* EGAppTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DD84D6504F3680700A81011 /* EGAppTableView.h */; };
+		5D4B1C07054A9C3100BEBFF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DF14A6804AFAE6900A81011 /* InfoPlist.strings */; };
+		5D4B1C08054A9C3100BEBFF4 /* Expogesture.icns in Resources */ = {isa = PBXBuildFile; fileRef = 5D5F9AE204B04C6E00A81011 /* Expogesture.icns */; };
+		5D4B1C09054A9C3100BEBFF4 /* CounterClockwise.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5D6F5C5304B5B3D900A81011 /* CounterClockwise.tiff */; };
+		5D4B1C0A054A9C3100BEBFF4 /* Clockwise.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5D6F5C5504B5B45E00A81011 /* Clockwise.tiff */; };
+		5D4B1C0B054A9C3100BEBFF4 /* Horizontal.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE968404B5B71400A81011 /* Horizontal.tiff */; };
+		5D4B1C0C054A9C3100BEBFF4 /* Vertical.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 5DEE968504B5B71400A81011 /* Vertical.tiff */; };
+		5D4B1C0D054A9C3100BEBFF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D8A2EAD04D294BC00A81011 /* Localizable.strings */; };
+		5D4B1C0E054A9C3100BEBFF4 /* StatusBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DC7FCFB04C974E600A81011 /* StatusBarIcon.png */; };
+		5D4B1C0F054A9C3100BEBFF4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 5DC1139704DD573B00A81011 /* MainMenu.nib */; };
+		5D4B1C11054A9C3100BEBFF4 /* DefaultDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DD8963004F107E100A81011 /* DefaultDefaults.plist */; };
+		5D4B1C12054A9C3100BEBFF4 /* ZPath.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1B807604F4EE7900A81011 /* ZPath.png */; };
+		5D4B1C13054A9C3100BEBFF4 /* NPath.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D1B807804F4EE7F00A81011 /* NPath.png */; };
+		5D4B1C15054A9C3100BEBFF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		5D4B1C16054A9C3100BEBFF4 /* EGController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB17E6804AFAA9300A81011 /* EGController.m */; };
+		5D4B1C17054A9C3100BEBFF4 /* EGPreference.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D66B2A504AFFADA00A81011 /* EGPreference.m */; };
+		5D4B1C18054A9C3100BEBFF4 /* HotkeyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D66B2AA04AFFE6700A81011 /* HotkeyEvent.m */; };
+		5D4B1C19054A9C3100BEBFF4 /* EGNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD94F304B85F1700A81011 /* EGNotificationView.m */; };
+		5D4B1C1A054A9C3100BEBFF4 /* HIDDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5B85504C69C3500A81011 /* HIDDevice.m */; };
+		5D4B1C1B054A9C3100BEBFF4 /* HIDElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB5B85A04C6A2C600A81011 /* HIDElement.m */; };
+		5D4B1C1C054A9C3100BEBFF4 /* HIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4DDAE204CEA9FD00A81011 /* HIDManager.m */; };
+		5D4B1C1D054A9C3100BEBFF4 /* AppSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C601404E8B79200A81011 /* AppSwitchView.m */; };
+		5D4B1C1E054A9C3100BEBFF4 /* FloatingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4C601604E8B79200A81011 /* FloatingWindow.m */; };
+		5D4B1C1F054A9C3100BEBFF4 /* EGAppTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DD84D6604F3680700A81011 /* EGAppTableView.m */; };
+		5D4B1C21054A9C3100BEBFF4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		5D4B1C22054A9C3100BEBFF4 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB5B85804C69C5A00A81011 /* IOKit.framework */; };
+		5D4B1C23054A9C3100BEBFF4 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCB912504E3463A00A81011 /* Carbon.framework */; };
+		5D5B099D05E5B99F00C21594 /* NSScreen-EGExt.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D5B099B05E5B99F00C21594 /* NSScreen-EGExt.h */; };
+		5D5B099E05E5B99F00C21594 /* NSScreen-EGExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B099C05E5B99F00C21594 /* NSScreen-EGExt.m */; };
+		5D80A582054E93B9002A1A0E /* HotkeyCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D80A580054E93B9002A1A0E /* HotkeyCapture.h */; };
+		5D80A583054E93B9002A1A0E /* HotkeyCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D80A581054E93B9002A1A0E /* HotkeyCapture.m */; };
+		5D9B598D05E37B6200BABD08 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 5D9B598C05E37B6200BABD08 /* Credits.rtf */; };
+		5DBCDD3A054D3BA5008F4803 /* NotifPos0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCDD35054D3BA5008F4803 /* NotifPos0.png */; };
+		5DBCDD3B054D3BA6008F4803 /* NotifPos1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCDD36054D3BA5008F4803 /* NotifPos1.png */; };
+		5DBCDD3C054D3BA6008F4803 /* NotifPos2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCDD37054D3BA5008F4803 /* NotifPos2.png */; };
+		5DBCDD3D054D3BA6008F4803 /* NotifPos3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCDD38054D3BA5008F4803 /* NotifPos3.png */; };
+		5DBCDD3E054D3BA6008F4803 /* NotifPos4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCDD39054D3BA5008F4803 /* NotifPos4.png */; };
+		5DEB88980553DE6A002882FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB88970553DE6A002882FF /* Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Expogesture_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expogesture_Prefix.h; sourceTree = "<group>"; };
+		5D1778D407ED320400AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = zh_TW; path = zh_TW.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		5D1778D507ED327200AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5D1778D907ED331D00AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5D1778DC07ED37CE00AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = zh_TW; path = zh_TW.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5D1B807604F4EE7900A81011 /* ZPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZPath.png; sourceTree = "<group>"; };
+		5D1B807804F4EE7F00A81011 /* NPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NPath.png; sourceTree = "<group>"; };
+		5D4B1C26054A9C3100BEBFF4 /* Expogesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expogesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D4C601304E8B79200A81011 /* AppSwitchView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AppSwitchView.h; sourceTree = "<group>"; };
+		5D4C601404E8B79200A81011 /* AppSwitchView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = AppSwitchView.m; sourceTree = "<group>"; };
+		5D4C601504E8B79200A81011 /* FloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = FloatingWindow.h; sourceTree = "<group>"; };
+		5D4C601604E8B79200A81011 /* FloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = FloatingWindow.m; sourceTree = "<group>"; };
+		5D4DDAE104CEA9FD00A81011 /* HIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDManager.h; sourceTree = "<group>"; };
+		5D4DDAE204CEA9FD00A81011 /* HIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDManager.m; sourceTree = "<group>"; };
+		5D5B099B05E5B99F00C21594 /* NSScreen-EGExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScreen-EGExt.h"; sourceTree = "<group>"; };
+		5D5B099C05E5B99F00C21594 /* NSScreen-EGExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScreen-EGExt.m"; sourceTree = "<group>"; };
+		5D5F9AE204B04C6E00A81011 /* Expogesture.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Expogesture.icns; sourceTree = "<group>"; };
+		5D66B2A504AFFADA00A81011 /* EGPreference.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGPreference.m; sourceTree = "<group>"; };
+		5D66B2A604AFFADA00A81011 /* EGPreference.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGPreference.h; sourceTree = "<group>"; };
+		5D66B2A904AFFE6700A81011 /* HotkeyEvent.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HotkeyEvent.h; sourceTree = "<group>"; };
+		5D66B2AA04AFFE6700A81011 /* HotkeyEvent.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HotkeyEvent.m; sourceTree = "<group>"; };
+		5D6F5C5304B5B3D900A81011 /* CounterClockwise.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = CounterClockwise.tiff; sourceTree = "<group>"; };
+		5D6F5C5504B5B45E00A81011 /* Clockwise.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Clockwise.tiff; sourceTree = "<group>"; };
+		5D80A580054E93B9002A1A0E /* HotkeyCapture.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HotkeyCapture.h; sourceTree = "<group>"; };
+		5D80A581054E93B9002A1A0E /* HotkeyCapture.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HotkeyCapture.m; sourceTree = "<group>"; };
+		5D8A0F3607EE75E20050CC1A /* niblocalize */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = niblocalize; sourceTree = "<group>"; };
+		5D8A0F3A07EE79340050CC1A /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5D8A2EAF04D294D600A81011 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5D9B598A05E37AB800BABD08 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5D9B598E05E37B6D00BABD08 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Japanese; path = Japanese.lproj/Credits.rtf; sourceTree = "<group>"; };
+		5DB17E6704AFAA9300A81011 /* EGController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGController.h; sourceTree = "<group>"; };
+		5DB17E6804AFAA9300A81011 /* EGController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGController.m; sourceTree = "<group>"; };
+		5DB5B85404C69C3500A81011 /* HIDDevice.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HIDDevice.h; sourceTree = "<group>"; };
+		5DB5B85504C69C3500A81011 /* HIDDevice.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HIDDevice.m; sourceTree = "<group>"; };
+		5DB5B85804C69C5A00A81011 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		5DB5B85A04C6A2C600A81011 /* HIDElement.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HIDElement.m; sourceTree = "<group>"; };
+		5DB5B85B04C6A2C600A81011 /* HIDElement.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HIDElement.h; sourceTree = "<group>"; };
+		5DBCDD35054D3BA5008F4803 /* NotifPos0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos0.png; sourceTree = "<group>"; };
+		5DBCDD36054D3BA5008F4803 /* NotifPos1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos1.png; sourceTree = "<group>"; };
+		5DBCDD37054D3BA5008F4803 /* NotifPos2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos2.png; sourceTree = "<group>"; };
+		5DBCDD38054D3BA5008F4803 /* NotifPos3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos3.png; sourceTree = "<group>"; };
+		5DBCDD39054D3BA5008F4803 /* NotifPos4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos4.png; sourceTree = "<group>"; };
+		5DBD94F304B85F1700A81011 /* EGNotificationView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGNotificationView.m; sourceTree = "<group>"; };
+		5DBD94F404B85F1700A81011 /* EGNotificationView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGNotificationView.h; sourceTree = "<group>"; };
+		5DC1139804DD573B00A81011 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		5DC1139D04DD578D00A81011 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5DC1139E04DD579500A81011 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		5DC113A004DD5B1F00A81011 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		5DC7FCFB04C974E600A81011 /* StatusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon.png; sourceTree = "<group>"; };
+		5DCB912304E3433300A81011 /* EGCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGCommon.h; sourceTree = "<group>"; };
+		5DCB912504E3463A00A81011 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		5DD84D6504F3680700A81011 /* EGAppTableView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGAppTableView.h; sourceTree = "<group>"; };
+		5DD84D6604F3680700A81011 /* EGAppTableView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGAppTableView.m; sourceTree = "<group>"; };
+		5DD8963004F107E100A81011 /* DefaultDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = DefaultDefaults.plist; sourceTree = "<group>"; };
+		5DEB88970553DE6A002882FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5DEE968404B5B71400A81011 /* Horizontal.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Horizontal.tiff; sourceTree = "<group>"; };
+		5DEE968504B5B71400A81011 /* Vertical.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Vertical.tiff; sourceTree = "<group>"; };
+		5DF14A6804AFAE6900A81011 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5D4B1C20054A9C3100BEBFF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4B1C21054A9C3100BEBFF4 /* Cocoa.framework in Frameworks */,
+				5D4B1C22054A9C3100BEBFF4 /* IOKit.framework in Frameworks */,
+				5D4B1C23054A9C3100BEBFF4 /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5D80A580054E93B9002A1A0E /* HotkeyCapture.h */,
+				5D80A581054E93B9002A1A0E /* HotkeyCapture.m */,
+				5DB17E6704AFAA9300A81011 /* EGController.h */,
+				5DB17E6804AFAA9300A81011 /* EGController.m */,
+				5D66B2A604AFFADA00A81011 /* EGPreference.h */,
+				5D66B2A504AFFADA00A81011 /* EGPreference.m */,
+				5D66B2A904AFFE6700A81011 /* HotkeyEvent.h */,
+				5D66B2AA04AFFE6700A81011 /* HotkeyEvent.m */,
+				5DBD94F404B85F1700A81011 /* EGNotificationView.h */,
+				5DBD94F304B85F1700A81011 /* EGNotificationView.m */,
+				5D4DDAE104CEA9FD00A81011 /* HIDManager.h */,
+				5D4DDAE204CEA9FD00A81011 /* HIDManager.m */,
+				5DB5B85404C69C3500A81011 /* HIDDevice.h */,
+				5DB5B85504C69C3500A81011 /* HIDDevice.m */,
+				5DB5B85B04C6A2C600A81011 /* HIDElement.h */,
+				5DB5B85A04C6A2C600A81011 /* HIDElement.m */,
+				5D4C601304E8B79200A81011 /* AppSwitchView.h */,
+				5D4C601404E8B79200A81011 /* AppSwitchView.m */,
+				5D4C601504E8B79200A81011 /* FloatingWindow.h */,
+				5D4C601604E8B79200A81011 /* FloatingWindow.m */,
+				5DD84D6504F3680700A81011 /* EGAppTableView.h */,
+				5DD84D6604F3680700A81011 /* EGAppTableView.m */,
+				5D5B099B05E5B99F00C21594 /* NSScreen-EGExt.h */,
+				5D5B099C05E5B99F00C21594 /* NSScreen-EGExt.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				5DB5B85804C69C5A00A81011 /* IOKit.framework */,
+				5DCB912504E3463A00A81011 /* Carbon.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5D4B1C26054A9C3100BEBFF4 /* Expogesture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Expogesture */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Expogesture;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* Expogesture_Prefix.h */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				5DCB912304E3433300A81011 /* EGCommon.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A0F3607EE75E20050CC1A /* niblocalize */,
+				5DEB88970553DE6A002882FF /* Info.plist */,
+				5DF14A6804AFAE6900A81011 /* InfoPlist.strings */,
+				5DC7FCFB04C974E600A81011 /* StatusBarIcon.png */,
+				5D5F9AE204B04C6E00A81011 /* Expogesture.icns */,
+				5D6F5C5504B5B45E00A81011 /* Clockwise.tiff */,
+				5D6F5C5304B5B3D900A81011 /* CounterClockwise.tiff */,
+				5DEE968404B5B71400A81011 /* Horizontal.tiff */,
+				5DEE968504B5B71400A81011 /* Vertical.tiff */,
+				5D1B807604F4EE7900A81011 /* ZPath.png */,
+				5D1B807804F4EE7F00A81011 /* NPath.png */,
+				5DBCDD35054D3BA5008F4803 /* NotifPos0.png */,
+				5DBCDD36054D3BA5008F4803 /* NotifPos1.png */,
+				5DBCDD37054D3BA5008F4803 /* NotifPos2.png */,
+				5DBCDD38054D3BA5008F4803 /* NotifPos3.png */,
+				5DBCDD39054D3BA5008F4803 /* NotifPos4.png */,
+				5DC1139704DD573B00A81011 /* MainMenu.nib */,
+				5DC1139F04DD5B1F00A81011 /* MainMenu.strings */,
+				5D8A2EAD04D294BC00A81011 /* Localizable.strings */,
+				5DD8963004F107E100A81011 /* DefaultDefaults.plist */,
+				5D9B598C05E37B6200BABD08 /* Credits.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5D4B1BF9054A9C3100BEBFF4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4B1BFA054A9C3100BEBFF4 /* Expogesture_Prefix.h in Headers */,
+				5D4B1BFB054A9C3100BEBFF4 /* EGController.h in Headers */,
+				5D4B1BFC054A9C3100BEBFF4 /* EGPreference.h in Headers */,
+				5D4B1BFD054A9C3100BEBFF4 /* HotkeyEvent.h in Headers */,
+				5D4B1BFE054A9C3100BEBFF4 /* EGNotificationView.h in Headers */,
+				5D4B1BFF054A9C3100BEBFF4 /* HIDDevice.h in Headers */,
+				5D4B1C00054A9C3100BEBFF4 /* HIDElement.h in Headers */,
+				5D4B1C01054A9C3100BEBFF4 /* HIDManager.h in Headers */,
+				5D4B1C02054A9C3100BEBFF4 /* EGCommon.h in Headers */,
+				5D4B1C03054A9C3100BEBFF4 /* AppSwitchView.h in Headers */,
+				5D4B1C04054A9C3100BEBFF4 /* FloatingWindow.h in Headers */,
+				5D4B1C05054A9C3100BEBFF4 /* EGAppTableView.h in Headers */,
+				5D80A582054E93B9002A1A0E /* HotkeyCapture.h in Headers */,
+				5D5B099D05E5B99F00C21594 /* NSScreen-EGExt.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5D4B1BF7054A9C3100BEBFF4 /* Expogesture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DF102850855751900A9BAF4 /* Build configuration list for PBXNativeTarget "Expogesture" */;
+			buildPhases = (
+				5D4B1BF8054A9C3100BEBFF4 /* ShellScript */,
+				5D4B1BF9054A9C3100BEBFF4 /* Headers */,
+				5D4B1C06054A9C3100BEBFF4 /* Resources */,
+				5D4B1C14054A9C3100BEBFF4 /* Sources */,
+				5D4B1C20054A9C3100BEBFF4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Expogesture;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Expogesture;
+			productReference = 5D4B1C26054A9C3100BEBFF4 /* Expogesture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 5DF102890855751900A9BAF4 /* Build configuration list for PBXProject "Expogesture" */;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				zh_TW,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Expogesture */;
+			projectDirPath = "";
+			targets = (
+				5D4B1BF7054A9C3100BEBFF4 /* Expogesture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5D4B1C06054A9C3100BEBFF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4B1C07054A9C3100BEBFF4 /* InfoPlist.strings in Resources */,
+				5D4B1C08054A9C3100BEBFF4 /* Expogesture.icns in Resources */,
+				5D4B1C09054A9C3100BEBFF4 /* CounterClockwise.tiff in Resources */,
+				5D4B1C0A054A9C3100BEBFF4 /* Clockwise.tiff in Resources */,
+				5D4B1C0B054A9C3100BEBFF4 /* Horizontal.tiff in Resources */,
+				5D4B1C0C054A9C3100BEBFF4 /* Vertical.tiff in Resources */,
+				5D4B1C0D054A9C3100BEBFF4 /* Localizable.strings in Resources */,
+				5D4B1C0E054A9C3100BEBFF4 /* StatusBarIcon.png in Resources */,
+				5D4B1C0F054A9C3100BEBFF4 /* MainMenu.nib in Resources */,
+				5D4B1C11054A9C3100BEBFF4 /* DefaultDefaults.plist in Resources */,
+				5D4B1C12054A9C3100BEBFF4 /* ZPath.png in Resources */,
+				5D4B1C13054A9C3100BEBFF4 /* NPath.png in Resources */,
+				5DBCDD3A054D3BA5008F4803 /* NotifPos0.png in Resources */,
+				5DBCDD3B054D3BA6008F4803 /* NotifPos1.png in Resources */,
+				5DBCDD3C054D3BA6008F4803 /* NotifPos2.png in Resources */,
+				5DBCDD3D054D3BA6008F4803 /* NotifPos3.png in Resources */,
+				5DBCDD3E054D3BA6008F4803 /* NotifPos4.png in Resources */,
+				5DEB88980553DE6A002882FF /* Info.plist in Resources */,
+				5D9B598D05E37B6200BABD08 /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D4B1BF8054A9C3100BEBFF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = Resources/niblocalize;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5D4B1C14054A9C3100BEBFF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4B1C15054A9C3100BEBFF4 /* main.m in Sources */,
+				5D4B1C16054A9C3100BEBFF4 /* EGController.m in Sources */,
+				5D4B1C17054A9C3100BEBFF4 /* EGPreference.m in Sources */,
+				5D4B1C18054A9C3100BEBFF4 /* HotkeyEvent.m in Sources */,
+				5D4B1C19054A9C3100BEBFF4 /* EGNotificationView.m in Sources */,
+				5D4B1C1A054A9C3100BEBFF4 /* HIDDevice.m in Sources */,
+				5D4B1C1B054A9C3100BEBFF4 /* HIDElement.m in Sources */,
+				5D4B1C1C054A9C3100BEBFF4 /* HIDManager.m in Sources */,
+				5D4B1C1D054A9C3100BEBFF4 /* AppSwitchView.m in Sources */,
+				5D4B1C1E054A9C3100BEBFF4 /* FloatingWindow.m in Sources */,
+				5D4B1C1F054A9C3100BEBFF4 /* EGAppTableView.m in Sources */,
+				5D80A583054E93B9002A1A0E /* HotkeyCapture.m in Sources */,
+				5D5B099E05E5B99F00C21594 /* NSScreen-EGExt.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5D8A2EAD04D294BC00A81011 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DC1139D04DD578D00A81011 /* English */,
+				5D8A2EAF04D294D600A81011 /* Japanese */,
+				5D1778D507ED327200AEE75F /* zh_TW */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5D9B598C05E37B6200BABD08 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D9B598A05E37AB800BABD08 /* English */,
+				5D9B598E05E37B6D00BABD08 /* Japanese */,
+				5D1778DC07ED37CE00AEE75F /* zh_TW */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		5DC1139704DD573B00A81011 /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DC1139E04DD579500A81011 /* English */,
+				5DC1139804DD573B00A81011 /* Japanese */,
+				5D1778D407ED320400AEE75F /* zh_TW */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		5DC1139F04DD5B1F00A81011 /* MainMenu.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D8A0F3A07EE79340050CC1A /* English */,
+				5DC113A004DD5B1F00A81011 /* Japanese */,
+				5D1778D907ED331D00AEE75F /* zh_TW */,
+			);
+			name = MainMenu.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DF102860855751900A9BAF4 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 41;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Expogesture_Prefix.h;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OPTIMIZATION_CFLAGS = "-O0";
+				PRODUCT_NAME = Expogesture;
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		5DF102870855751900A9BAF4 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 41;
+				DEBUGGING_SYMBOLS = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Expogesture_Prefix.h;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Expogesture;
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		5DF102880855751900A9BAF4 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 41;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Expogesture_Prefix.h;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Expogesture;
+				WARNING_CFLAGS = "-Wmost";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Default;
+		};
+		5DF1028A0855751900A9BAF4 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Development;
+		};
+		5DF1028B0855751900A9BAF4 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Deployment;
+		};
+		5DF1028C0855751900A9BAF4 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DF102850855751900A9BAF4 /* Build configuration list for PBXNativeTarget "Expogesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF102860855751900A9BAF4 /* Development */,
+				5DF102870855751900A9BAF4 /* Deployment */,
+				5DF102880855751900A9BAF4 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		5DF102890855751900A9BAF4 /* Build configuration list for PBXProject "Expogesture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF1028A0855751900A9BAF4 /* Development */,
+				5DF1028B0855751900A9BAF4 /* Deployment */,
+				5DF1028C0855751900A9BAF4 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

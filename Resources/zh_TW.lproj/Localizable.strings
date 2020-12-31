@@ -1,0 +1,38 @@
+/*
+ *  Browse this file with Lucida Grande font - 
+ *  some special characters will be seen as blank with other fonts
+ *
+ *  THIS FILE SHOULD BE ENCODED IN UTF-8 OR UTF-16
+ */
+
+"Ctrl" = "⌃";
+"Alt" = "⌥";
+"Cmd" = "⌘";
+"Shift" = "⇧";
+
+"Delete" = "⌫";
+"Del" = "⌦";
+
+"Left" = "←";
+"Right" = "→";
+"Up" = "↑";
+"Down" = "↓";
+
+"Yes" = "好";
+"Cancel" = "取消";
+
+"(Global Definitions)" = "(全域定義)";
+"Remove Application" = "移除應用程式";
+"Remove %@?" = "您確定想要移除 %@ 的動作定義？";
+"Use Global Setting" = "使用全域設定";
+"Disabled" = "已停用";
+"Send Key Event" = "傳送按鍵事件";
+"Task Switch" = "工作切換";
+"Pick A Menu Item" = "選取一項選單項目";
+"Menu Label" = "選單標籤";
+"Key Sent" = "傳送按鍵";
+
+"Show" = "顯示";
+"Hide" = "隱藏";
+"Hide Others" = "隱藏其他";
+"Quit" = "結束";
