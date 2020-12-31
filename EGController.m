@@ -18,6 +18,7 @@
 #import "EGNotificationView.h"
 #import "FloatingWindow.h"
 #import "NSScreen-EGExt.h"
+#import "NotificationWindowController.h"
 
 // Note: The order of EGMoveDirection constants are important;
 // see method _mouseHasMovedBy:
@@ -71,49 +72,6 @@ static const int GestureTemplateCount
 		gestureProgresses[idx] = 0;
 }
 
-- (void)_showNotifWindowWithText:(NSString *)text
-{
-	// Notification window should not averlap mouse pointer...
-	static NSPoint notifWindowPosList[] = {
-	{0.5,  0.5 },   // center
-	{0.25, 0.75},   // upper-right
-	{0.75, 0.75},   // upper-left
-	{0.25, 0.25},   // lower-right
-	{0.75, 0.25},   // lower-left
-	};
-	
-	NSRect screenRect = [[NSScreen screenUnderMouse] frame];
-	NSRect viewFrame;
-	NSSize textSize, windowSize;;
-
-	[notifView setText:text];
-	
-	viewFrame = [notifView frame];
-	textSize = [[notifView attributedStringValue] size];
-	windowSize.width = textSize.width + viewFrame.size.height * 2.0;
-	windowSize.height = viewFrame.size.height;
-	if (windowSize.width > screenRect.size.width / 2.2) {
-		windowSize.width = screenRect.size.width / 2.2;
-	}
-	[notifWindow setContentSize:windowSize];
-	
-	NSUserDefaults *udef = [NSUserDefaults standardUserDefaults];
-	int posIdx = [udef integerForKey:@"NotifWindowPosition"];
-	NSPoint wp = notifWindowPosList[posIdx];
-	wp.x = wp.x * screenRect.size.width + screenRect.origin.x;
-	wp.y = wp.y * screenRect.size.height + screenRect.origin.y;
-	[notifWindow setFrameCenteredAt:wp];
-	
-	[notifWindow orderFrontRegardless];
-
-	[notifWindowTimer invalidate];	// reset timer if already shown
-	notifWindowTimer =
-			[NSTimer scheduledTimerWithTimeInterval: 0.4f
-						target: self
-						selector: @selector(_dismissNotifWindow:)
-						userInfo: nil
-						repeats: NO];
-}
 
 -(void)sendKeyEventWithKeyCode: (CGKeyCode)keyCode flags: (CGEventFlags)flags isDown: (BOOL)isDown
 {
@@ -127,7 +85,7 @@ static const int GestureTemplateCount
 
 - _generateKeyEvent:(HotkeyEvent *)hotkeyEvent
 {
-	[self _showNotifWindowWithText:[hotkeyEvent localizedDescription]];
+	[NotificationWindowController.sharedController showWithText: [hotkeyEvent localizedDescription]];
 
 	CGEventFlags flags = 0;
 	if (hotkeyEvent.ctrl) flags |= kCGEventFlagMaskControl;
@@ -199,7 +157,7 @@ AXUIElementRef _menuItemForTitle(AXUIElementRef menuBarRef, NSString *targetTitl
 	id targetMenuTitle;
 	
 	NSString *menuLabel = [thisEvent menuLabel];
-	[self _showNotifWindowWithText:menuLabel];
+	[NotificationWindowController.sharedController showWithText: menuLabel];
 	
 	pid_t activeAppPid = [self activeApplication].processIdentifier;
 	
@@ -350,12 +308,6 @@ pickMenu:
 
 	lastMoveTimestamp = thisTimestamp;
 	return self;
-}
-
--(void)_dismissNotifWindow:userInfo
-{
-	[notifWindow orderOutWithFade:self];
-	notifWindowTimer = nil;
 }
 
 //#define DEBUGME
@@ -555,8 +507,6 @@ pickMenu:
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
-	[notifWindowTimer invalidate];
-
 	[mousePollTimer invalidate];
 }
 

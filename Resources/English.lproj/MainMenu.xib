@@ -227,8 +227,6 @@
         </menu>
         <customObject id="197" userLabel="EGController" customClass="EGController">
             <connections>
-                <outlet property="notifView" destination="656" id="662"/>
-                <outlet property="notifWindow" destination="654" id="659"/>
                 <outlet property="prefController" destination="276" id="277"/>
                 <outlet property="statusMenu" destination="344" id="352"/>
             </connections>
@@ -923,34 +921,6 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="654" userLabel="NotifWindow" customClass="FloatingWindow">
-            <windowStyleMask key="styleMask" titled="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="286" y="578" width="300" height="70"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
-            <view key="contentView" id="655">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="656" customClass="EGNotificationView">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <connections>
-                            <outlet property="notificationLabel" destination="657" id="658"/>
-                        </connections>
-                    </customView>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="657">
-                        <rect key="frame" x="-3" y="13" width="306" height="44"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="System Font Text" id="881">
-                            <font key="font" metaFont="systemBold" size="36"/>
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </textFieldCell>
-                    </textField>
-                </subviews>
-            </view>
-        </window>
         <userDefaultsController id="727"/>
         <userDefaultsController representsSharedInstance="YES" id="728" userLabel="Shared Defaults"/>
         <view id="626">

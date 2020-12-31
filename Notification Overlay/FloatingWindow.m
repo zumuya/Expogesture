@@ -19,19 +19,16 @@
 		styleMask:NSWindowStyleMaskBorderless
 		backing:backingType
 		defer:flag];
+	
+	[self setBackgroundColor: [NSColor clearColor]];
+	[self setOpaque: NO];
+	[self setHasShadow: NO];
+	[self setLevel: NSScreenSaverWindowLevel];
+	[self setCanHide: NO];
+	[self setCollectionBehavior: (NSWindowCollectionBehaviorMoveToActiveSpace | NSWindowCollectionBehaviorStationary)];
+
 	return self;
 }
-
-- (void)awakeFromNib
-{
-	[self setBackgroundColor:[NSColor clearColor]];
-	[self setOpaque:NO];
-	[self setHasShadow:NO];
-	[self setLevel:NSFloatingWindowLevel];
-	[self setCanHide:NO];
-	[self setCollectionBehavior:(NSWindowCollectionBehaviorMoveToActiveSpace | NSWindowCollectionBehaviorStationary)];
-}
-
 - setFrameCenteredAt:(NSPoint)center
 {
 	NSRect screen = [[NSScreen screenUnderMouse] frame];

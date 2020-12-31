@@ -25,7 +25,6 @@
 	int gestureSizeMin;
 	
 	NSTimer *mousePollTimer;
-	NSTimer *notifWindowTimer;
 	NSMutableArray *mouseMoveXElements;
 	NSMutableArray *mouseMoveYElements;
 	NSPoint lastMousePoint;

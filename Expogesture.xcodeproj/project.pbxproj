@@ -48,6 +48,7 @@
 		5DBCDD3E054D3BA6008F4803 /* NotifPos4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DBCDD39054D3BA5008F4803 /* NotifPos4.png */; };
 		5DEB88980553DE6A002882FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DEB88970553DE6A002882FF /* Info.plist */; };
 		7857BD84259D92C800301C8B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857BD82259D92C800301C8B /* MainMenu.xib */; };
+		7857BD8B259E056B00301C8B /* NotificationWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7857BD8A259E056B00301C8B /* NotificationWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +100,8 @@
 		5DEE968504B5B71400A81011 /* Vertical.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Vertical.tiff; sourceTree = "<group>"; };
 		5DF14A6804AFAE6900A81011 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		7857BD83259D92C800301C8B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		7857BD8A259E056B00301C8B /* NotificationWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationWindowController.m; sourceTree = "<group>"; };
+		7857BD8D259E058100301C8B /* NotificationWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationWindowController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 		7857BD88259E000D00301C8B /* Notification Overlay */ = {
 			isa = PBXGroup;
 			children = (
+				7857BD8D259E058100301C8B /* NotificationWindowController.h */,
+				7857BD8A259E056B00301C8B /* NotificationWindowController.m */,
 				5DBD94F404B85F1700A81011 /* EGNotificationView.h */,
 				5DBD94F304B85F1700A81011 /* EGNotificationView.m */,
 				5D4C601504E8B79200A81011 /* FloatingWindow.h */,
@@ -341,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7857BD8B259E056B00301C8B /* NotificationWindowController.m in Sources */,
 				5D4B1C15054A9C3100BEBFF4 /* main.m in Sources */,
 				5D4B1C16054A9C3100BEBFF4 /* EGController.m in Sources */,
 				5D4B1C17054A9C3100BEBFF4 /* EGPreference.m in Sources */,
