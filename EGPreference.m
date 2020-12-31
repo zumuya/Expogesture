@@ -103,7 +103,6 @@
 			zPathMenuLabel, nPathMenuLabel,
 			nil];
 	
-	//[usePolling setState:[appController usePollingToTrackPointer]];
 	[gestureSizeMin setIntValue:[appController gestureSizeMin]];
 	[gestureSizeMinLabel setIntValue:[appController gestureSizeMin]];
 	[bringAllCheck setState:
@@ -140,8 +139,6 @@
 	
 	[defaults setObject:keyDefsDict forKey:@"EventKeyDefs"];
 	
-	//[defaults setBool:[usePolling state]
-	//		forKey:@"UsePollingToTrackPointer"];
 	[defaults setInteger:[gestureSizeMin intValue]
 			forKey:@"GestureSizeMin"];
 	[defaults setBool:[bringAllCheck state]
