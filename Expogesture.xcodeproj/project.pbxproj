@@ -66,7 +66,6 @@
 		32CA4F630368D1EE00C91783 /* Expogesture_Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expogesture_Prefix.h; sourceTree = "<group>"; };
 		5D1778D407ED320400AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = zh_TW; path = zh_TW.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		5D1778D507ED327200AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/Localizable.strings; sourceTree = "<group>"; };
-		5D1778D907ED331D00AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = zh_TW; path = zh_TW.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5D1778DC07ED37CE00AEE75F /* zh_TW */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = zh_TW; path = zh_TW.lproj/Credits.rtf; sourceTree = "<group>"; };
 		5D1B807604F4EE7900A81011 /* ZPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZPath.png; sourceTree = "<group>"; };
 		5D1B807804F4EE7F00A81011 /* NPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NPath.png; sourceTree = "<group>"; };
@@ -88,8 +87,6 @@
 		5D6F5C5504B5B45E00A81011 /* Clockwise.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Clockwise.tiff; sourceTree = "<group>"; };
 		5D80A580054E93B9002A1A0E /* HotkeyCapture.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HotkeyCapture.h; sourceTree = "<group>"; };
 		5D80A581054E93B9002A1A0E /* HotkeyCapture.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HotkeyCapture.m; sourceTree = "<group>"; };
-		5D8A0F3607EE75E20050CC1A /* niblocalize */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = niblocalize; sourceTree = "<group>"; };
-		5D8A0F3A07EE79340050CC1A /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5D8A2EAF04D294D600A81011 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5D9B598A05E37AB800BABD08 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		5D9B598E05E37B6D00BABD08 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Japanese; path = Japanese.lproj/Credits.rtf; sourceTree = "<group>"; };
@@ -110,7 +107,6 @@
 		5DC1139804DD573B00A81011 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		5DC1139D04DD578D00A81011 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5DC1139E04DD579500A81011 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		5DC113A004DD5B1F00A81011 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		5DC7FCFB04C974E600A81011 /* StatusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon.png; sourceTree = "<group>"; };
 		5DCB912304E3433300A81011 /* EGCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGCommon.h; sourceTree = "<group>"; };
 		5DCB912504E3463A00A81011 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
@@ -220,7 +216,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5D8A0F3607EE75E20050CC1A /* niblocalize */,
 				5DEB88970553DE6A002882FF /* Info.plist */,
 				5DF14A6804AFAE6900A81011 /* InfoPlist.strings */,
 				5DC7FCFB04C974E600A81011 /* StatusBarIcon.png */,
@@ -237,7 +232,6 @@
 				5DBCDD38054D3BA5008F4803 /* NotifPos3.png */,
 				5DBCDD39054D3BA5008F4803 /* NotifPos4.png */,
 				5DC1139704DD573B00A81011 /* MainMenu.nib */,
-				5DC1139F04DD5B1F00A81011 /* MainMenu.strings */,
 				5D8A2EAD04D294BC00A81011 /* Localizable.strings */,
 				5DD8963004F107E100A81011 /* DefaultDefaults.plist */,
 				5D9B598C05E37B6200BABD08 /* Credits.rtf */,
@@ -285,7 +279,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DF102850855751900A9BAF4 /* Build configuration list for PBXNativeTarget "Expogesture" */;
 			buildPhases = (
-				5D4B1BF8054A9C3100BEBFF4 /* ShellScript */,
 				5D4B1BF9054A9C3100BEBFF4 /* Headers */,
 				5D4B1C06054A9C3100BEBFF4 /* Resources */,
 				5D4B1C14054A9C3100BEBFF4 /* Sources */,
@@ -352,18 +345,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5D4B1BF8054A9C3100BEBFF4 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = Resources/niblocalize;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5D4B1C14054A9C3100BEBFF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -416,16 +397,6 @@
 				5D1778D407ED320400AEE75F /* zh_TW */,
 			);
 			name = MainMenu.nib;
-			sourceTree = "<group>";
-		};
-		5DC1139F04DD5B1F00A81011 /* MainMenu.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D8A0F3A07EE79340050CC1A /* English */,
-				5DC113A004DD5B1F00A81011 /* Japanese */,
-				5D1778D907ED331D00AEE75F /* zh_TW */,
-			);
-			name = MainMenu.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
