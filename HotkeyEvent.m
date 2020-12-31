@@ -95,6 +95,9 @@ struct hotkeyDef_t hotkeyDefs[] = {
 	{ @"F10",		0,	109,	NO,	YES	},
 	{ @"F11",		0,	103,	NO,	YES	},
 	{ @"F12",		0,	111,	NO,	YES	},
+	
+	{ @"Mission Control", 0, 160, NO, YES },
+	{ @"Launchpad", 0, 130, NO, YES },
 };
 int hotkeyDefsCount = sizeof(hotkeyDefs) / sizeof(struct hotkeyDef_t);
 
