@@ -24,7 +24,7 @@ extern CGError CGSSetGlobalHotKeyOperatingMode(CGSConnection connection, CGSGlob
 - initWithFrame:(NSRect)frame
 {
 	self = [super initWithFrame:frame];
-	hotkey = [[HotkeyEvent alloc] initWithKeyName:@"Esc" ctrl:NO alt:NO cmd:NO];
+	hotkey = [[HotkeyEvent alloc] initWithKeyCode:0 ctrl:NO alt:NO cmd:NO];
 	textAttr = [[NSDictionary alloc] initWithObjectsAndKeys:
 		[NSFont systemFontOfSize:0], NSFontAttributeName,
 		nil];

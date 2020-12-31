@@ -13,6 +13,7 @@ struct hotkeyDef_t {
 	CGKeyCode keyCode;
 	BOOL needShift;
 	BOOL canShift;
+	NSString* sfSymbol;
 };
 extern struct hotkeyDef_t hotkeyDefs[];
 extern int hotkeyDefsCount;
@@ -46,11 +47,10 @@ typedef enum _HotkeyPseudoEventType {
 + (NSArray *)arrayOfKeyNames;
 + (NSArray *)arrayOfLocalizedKeyNames;
 + (NSString *)keyNameAtIndex:(int)index;
-+ (int)indexOfKeyName:(NSString *)keyName;
 + (NSArray *)hotkeyArrayWithArray:(NSArray *)anArray
 		count:(int)count global:(BOOL)gFlag;
 
-- (HotkeyEvent *)initWithKeyName:(NSString *)keyName
+- (HotkeyEvent *)initWithKeyCode:(CGKeyCode)keyCode
 		ctrl:(BOOL)ctrlFlag alt:(BOOL)altFlag cmd:(BOOL)cmdFlag;
 - initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionary;
@@ -63,7 +63,6 @@ typedef enum _HotkeyPseudoEventType {
 - (BOOL)alt;
 - (BOOL)cmd;
 - (BOOL)shift;
-- (id)setKeyName:(NSString *)keyName;
 - setKeyCode:(CGKeyCode)keyCode;
 - (id)setCtrl:(BOOL)flag;
 - (id)setAlt:(BOOL)flag;
@@ -83,5 +82,7 @@ typedef enum _HotkeyPseudoEventType {
 - setPidCache:(pid_t)pid;
 - (AXUIElementRef)menuItemRefCache;
 - setMenuItemRefCache:(AXUIElementRef)menuItemRef;
+
+-(NSString*)symbolName API_AVAILABLE(macosx(11.0));
 
 @end
