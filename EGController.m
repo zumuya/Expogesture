@@ -568,6 +568,7 @@ void _reopenApplication(ProcessSerialNumber psn)
 						selector: @selector(_timerEvent:)
 						userInfo: nil
 						repeats: YES];
+	[mousePollTimer setTolerance: (pointerPollingInterval * 0.25)];
 }
 
 
