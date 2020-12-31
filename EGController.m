@@ -460,17 +460,6 @@ pickMenu:
 	NSLog(@"Sesssion becomes %@", sessionIsHidden ? @"Hidden" : @"Visible");
 }
 
-void _reopenApplication(ProcessSerialNumber psn)
-{
-	OSStatus err;
-	AEAddressDesc targetDesc;
-	AppleEvent ev;
-	
-	err = AECreateDesc(typeProcessSerialNumber, &psn, sizeof(psn), &targetDesc);
-	err = AECreateAppleEvent(kCoreEventClass, kAEReopenApplication, &targetDesc, kAutoGenerateReturnID, kAnyTransactionID, &ev);
-	err = AESendMessage(&ev, NULL, kAENoReply, kAEDefaultTimeout);
-}
-
 - init
 {
 	self = [super init];
