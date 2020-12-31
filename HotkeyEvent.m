@@ -145,6 +145,20 @@ int hotkeyDefsCount = sizeof(hotkeyDefs) / sizeof(struct hotkeyDef_t);
 	NSLog(@"indexOfKeyName - invalid key name given: %@", name);
 	return -1;
 }
++ (int)indexOfKeyCode:(CGKeyCode)keyCode
+{
+	BOOL found = NO;
+	int idx;
+	
+	for (idx = 0; idx < hotkeyDefsCount; idx++) {
+		if (keyCode == hotkeyDefs[idx].keyCode) {
+			found = YES;
+			break;
+		}
+	}
+	if (found) return idx;
+	return -1;
+}
 
 + (NSArray *)hotkeyArrayWithArray:(NSArray *)anArray
 		count:(int)count global:(BOOL)gFlag
@@ -298,7 +312,8 @@ int hotkeyDefsCount = sizeof(hotkeyDefs) / sizeof(struct hotkeyDef_t);
 {
 	keyCode = code;
 	canShift = YES;
-	keyName = nil;
+	int idx = [HotkeyEvent indexOfKeyCode: keyCode];
+	keyName = ((idx == -1) ? nil : hotkeyDefs[idx].keyName);
 	return self;
 }
 
