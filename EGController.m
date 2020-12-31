@@ -115,9 +115,12 @@ static const int GestureTemplateCount
 						repeats: NO];
 }
 
--(void)sendKeyEventWithKeyCode: (CGKeyCode)keyCode isDown: (BOOL)isDown
+-(void)sendKeyEventWithKeyCode: (CGKeyCode)keyCode flags: (CGEventFlags)flags isDown: (BOOL)isDown
 {
 	CGEventRef event = CGEventCreateKeyboardEvent(nil, keyCode, isDown);
+	if (flags) {
+		CGEventSetFlags(event, flags);
+	}
 	CGEventPost(kCGSessionEventTap, event);
 	CFRelease(event);
 }
@@ -126,18 +129,14 @@ static const int GestureTemplateCount
 {
 	[self _showNotifWindowWithText:[hotkeyEvent localizedDescription]];
 
-	if ([hotkeyEvent ctrl])  [self sendKeyEventWithKeyCode: 59 isDown: true];
-	if ([hotkeyEvent alt])   [self sendKeyEventWithKeyCode: 58 isDown: true];
-	if ([hotkeyEvent cmd])  [self sendKeyEventWithKeyCode: 55 isDown: true];
-	if ([hotkeyEvent shift]) [self sendKeyEventWithKeyCode: 56 isDown: true];
-	
-	[self sendKeyEventWithKeyCode: hotkeyEvent.keyCode isDown: true];
-	[self sendKeyEventWithKeyCode: hotkeyEvent.keyCode isDown: false];
+	CGEventFlags flags = 0;
+	if (hotkeyEvent.ctrl) flags |= kCGEventFlagMaskControl;
+	if (hotkeyEvent.alt) flags |= kCGEventFlagMaskAlternate;
+	if (hotkeyEvent.cmd) flags |= kCGEventFlagMaskCommand;
+	if (hotkeyEvent.shift) flags |= kCGEventFlagMaskShift;
 
-	if ([hotkeyEvent shift]) [self sendKeyEventWithKeyCode: 56 isDown: true];
-	if ([hotkeyEvent cmd]) [self sendKeyEventWithKeyCode: 55 isDown: true];
-	if ([hotkeyEvent alt]) [self sendKeyEventWithKeyCode: 58 isDown: true];
-	if ([hotkeyEvent ctrl]) [self sendKeyEventWithKeyCode: 59 isDown: true];
+	[self sendKeyEventWithKeyCode: hotkeyEvent.keyCode flags: flags isDown: true];
+	[self sendKeyEventWithKeyCode: hotkeyEvent.keyCode flags: flags isDown: false];
 	
 	return self;
 }
