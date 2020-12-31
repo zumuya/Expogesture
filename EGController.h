@@ -20,7 +20,6 @@
     
     NSMutableDictionary *eventKeyDefs;
     NSArray *keyDefsGlobal;
-    BOOL usePollingToTrackPointer;
     unsigned long mouseMoveTimeout;
     float pointerPollingInterval;
     int gestureSizeMin;

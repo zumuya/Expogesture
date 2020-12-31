@@ -16,7 +16,6 @@
 #import "EGPreference.h"
 #import "HotkeyEvent.h"
 #import "EGNotificationView.h"
-#import "HIDManager.h"
 #import "FloatingWindow.h"
 #import "NSScreen-EGExt.h"
 
@@ -438,117 +437,7 @@ pickMenu:
         [self _mouseHasMovedBy:mouseMove];
     lastMousePoint = currentPoint;
 }
-
-- (void)_hidEventCallback:sender
-{
-    HRESULT hwRet;
-    IOHIDEventStruct event;
-    NSSize move = NSZeroSize;
-    NSEnumerator *anEnum;
-    HIDElement *elem;
-    
-    while ((hwRet = [sender nextEvent:&event]) == kIOReturnSuccess) {
-    
-        anEnum = [mouseMoveXElements objectEnumerator];
-        while (elem = [anEnum nextObject]) {
-            if (sender == elem->hidDevice &&
-                    event.elementCookie == elem->cookie) {
-                move.width += event.value;
-                goto nextEvent;
-            }
-        }
-
-        anEnum = [mouseMoveYElements objectEnumerator];
-        while (elem = [anEnum nextObject]) {
-            if (sender == elem->hidDevice &&
-                    event.elementCookie == elem->cookie) {
-                move.height += event.value;
-                goto nextEvent;
-            }
-        }
-
-    nextEvent:
-        continue;
-    }
-    
-    if (move.width || move.height) {
-        [self _mouseHasMovedBy:move];
-        //NSLog(@"mouseEventCallback: - %@", NSStringFromSize(move));
-    }
 }
-
-- (IOHIDElementCookie)_registerCookieForDevice:(HIDDevice *)dev
-        page:(UInt32)page usage:(UInt32)usage
-        elementsArray:(NSMutableArray *)elemArray
-{
-    IOHIDElementCookie cookie;
-
-    cookie = [dev elementCookieForUsagePage:page usage:usage];
-    [dev queueAddElement:cookie];
-    NSLog(@"Cookie has succesfully registered to the queue for dev=%@ page=%d usage=%d",
-                    [dev className], page, usage);
-                    
-    [elemArray addObject:[HIDElement elementWithDevice:dev cookie:cookie]];
-    return cookie;
-}
-
-- (void)_deviceRemovedCallback:(HIDDevice *)device
-{
-    NSMutableArray *ea;
-    NSEnumerator *eaEnum =
-            [[NSArray arrayWithObjects:
-                mouseMoveXElements, mouseMoveYElements, nil] objectEnumerator];
-
-    while (ea = [eaEnum nextObject]) {
-        int idx;
-        HIDElement *e;
-        for (idx = 0; idx < [ea count]; idx++) {
-            e = [ea objectAtIndex:idx];
-            if (e->hidDevice == device) [ea removeObjectAtIndex:idx];
-        }
-    }
-    
-    [hidDevices removeObject:device];
-}
-
-- (void)_miceAddedCallback:(NSArray *)devArray
-{
-    HIDDevice *dev;
-    int idx;
-    
-    NSLog(@"%d mice found.", [devArray count]);
-    for (idx = 0; idx < [devArray count]; idx++)  {
-        dev = [devArray objectAtIndex:idx];
-        [hidDevices addObject:dev];
-
-        if (!usePollingToTrackPointer) {
-            [self _registerCookieForDevice:dev
-                    page:kHIDPage_GenericDesktop usage:kHIDUsage_GD_X
-                    elementsArray:mouseMoveXElements];
-    
-            [self _registerCookieForDevice:dev
-                    page:kHIDPage_GenericDesktop usage:kHIDUsage_GD_Y
-                    elementsArray:mouseMoveYElements];
-        }
-        
-        [dev setEventCallbackSelector:@selector(_hidEventCallback:) target:self];
-        [dev setRemovedCallbackSelector:@selector(_deviceRemovedCallback:) target:self];
-    }
-}
-
-- (void)_setupHIDQueues
-{
-    hidDevices = [[NSMutableArray alloc] init];
-    mouseMoveXElements = [[NSMutableArray alloc] init];
-    mouseMoveYElements = [[NSMutableArray alloc] init];
-
-    [[HIDManager alloc]
-            initWithDeviceAttachedCallbackSelector:@selector(_miceAddedCallback:)
-            target:self
-            forPrimaryUsagePage:kHIDPage_GenericDesktop
-            usage:kHIDUsage_GD_Mouse];
-}
-
 
 - (void)_userSwitchHandler:(NSNotification *)notif
 {
@@ -618,12 +507,6 @@ void _reopenApplication(ProcessSerialNumber psn)
                     pathForResource:@"DefaultDefaults"
                     ofType:@"plist"]];
     [defaults registerDefaults:defaultDefaults];
-    
-    // Setup from defaults
-    usePollingToTrackPointer =
-            [defaults boolForKey:@"UsePollingToTrackPointer"];
-    NSLog(@"Polling timer is used to track pointer: %@", 
-            StringFromBOOL(usePollingToTrackPointer));
 
     gestureSizeMin = [defaults integerForKey:@"GestureSizeMin"];
 
@@ -678,19 +561,13 @@ void _reopenApplication(ProcessSerialNumber psn)
     if ([defaults boolForKey:@"ShowStatusBarMenu"]) {
         [self showStatusBarMenu];
     }
-    
-    // We no longer setup HID queue interface when polling option is set
-	// to prevent crash on startup...
-    if (usePollingToTrackPointer) {
-        mousePollTimer =
-            [NSTimer scheduledTimerWithTimeInterval: pointerPollingInterval
-                            target: self
-                            selector: @selector(_timerEvent:)
-                            userInfo: nil
-                            repeats: YES];
-    } else {
-		[self _setupHIDQueues];
-	}	
+	
+	mousePollTimer =
+		[NSTimer scheduledTimerWithTimeInterval: pointerPollingInterval
+						target: self
+						selector: @selector(_timerEvent:)
+						userInfo: nil
+						repeats: YES];
 }
 
 
