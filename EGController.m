@@ -520,16 +520,15 @@ void _reopenApplication(ProcessSerialNumber psn)
 	// new one on failure.
 	eventKeyDefs = [[NSMutableDictionary alloc] init];
 	keyDefsDict = [defaults objectForKey:@"EventKeyDefs"];
-	NSString *appName;
-	NSEnumerator *anEnum = [[keyDefsDict allKeys] objectEnumerator];
-	while (appName = [anEnum nextObject]) {
-		NSArray *appArray = [keyDefsDict objectForKey:appName];
-		NSArray *hotkeys = [HotkeyEvent hotkeyArrayWithArray:appArray
-				count:GestureTemplateCount
-				global:[appName isEqualToString:EGGlobalAppName]];
-		[eventKeyDefs setObject:hotkeys forKey:appName];
-		if ([appName isEqualToString:EGGlobalAppName])
+	for (NSString* appName in keyDefsDict.allKeys) {
+		NSArray* appArray = [keyDefsDict objectForKey: appName];
+		NSArray* hotkeys = [HotkeyEvent hotkeyArrayWithArray: appArray
+				count: GestureTemplateCount
+				global: [appName isEqualToString: EGGlobalAppName]];
+		[eventKeyDefs setObject: hotkeys forKey: appName];
+		if ([appName isEqualToString: EGGlobalAppName]) {
 			keyDefsGlobal = hotkeys;
+		}
 	}
 	
 	return self;
