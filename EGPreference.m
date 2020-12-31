@@ -1,8 +1,8 @@
 /*
-    Copyright (C) 2003-2004 NAKAHASHI Ichiro
+	Copyright (C) 2003-2004 NAKAHASHI Ichiro
 
-    This program is distributed under the GNU Public License.
-    This program comes with NO WARRANTY.
+	This program is distributed under the GNU Public License.
+	This program comes with NO WARRANTY.
 */
 
 #import "EGCommon.h"
@@ -15,48 +15,46 @@
 
 - (NSString *)_appNameAtIndex:(int)index
 {
-    NSMutableArray *appList =
-            [[[appController eventKeyDefs] allKeys] mutableCopy];
-    [appList autorelease];
-    [appList removeObject:@"_Global"];
-    [appList insertObject:@"_Global" atIndex:0];
+	NSMutableArray *appList =
+			[[[appController eventKeyDefs] allKeys] mutableCopy];
+	[appList removeObject:@"_Global"];
+	[appList insertObject:@"_Global" atIndex:0];
 
-    return [appList objectAtIndex:index];
+	return [appList objectAtIndex:index];
 }
 
 - (void)_setupEventPrefsForApp:(NSString *)appName
 {
-    NSArray *keyDefs = [[appController eventKeyDefs] objectForKey:appName];
-    int eventId, eventCount;
-    
-    eventCount = [keyDefs count];
-    for (eventId = 0; eventId < eventCount; eventId++) {
-        HotkeyEvent *hotkey = [keyDefs objectAtIndex:eventId];
-        NSPopUpButton *pseudoPop =
-                [pseudoEventPopUpArray objectAtIndex:eventId];
-        NSTextField *label = [labelArray objectAtIndex:eventId];
-        HotkeyCapture *capture = [captureArray objectAtIndex:eventId];
-        NSTextField *menuLabel = [menuLabelArray objectAtIndex:eventId];
+	NSArray *keyDefs = [[appController eventKeyDefs] objectForKey:appName];
+	int eventId, eventCount;
+	
+	eventCount = [keyDefs count];
+	for (eventId = 0; eventId < eventCount; eventId++) {
+		HotkeyEvent *hotkey = [keyDefs objectAtIndex:eventId];
+		NSPopUpButton *pseudoPop =
+				[pseudoEventPopUpArray objectAtIndex:eventId];
+		NSTextField *label = [labelArray objectAtIndex:eventId];
+		HotkeyCapture *capture = [captureArray objectAtIndex:eventId];
+		NSTextField *menuLabel = [menuLabelArray objectAtIndex:eventId];
 
 		HotkeyPseudoEventType et = [hotkey pseudoEventType];
 		
-        NSMenu *menu = [[[NSMenu alloc] 
-                initWithTitle:@"PopUp"] autorelease];
-        if (![appName isEqualToString:EGGlobalAppName]) {
-            [[menu addItemWithTitle:
-                    NSLocalizedString(@"Use Global Setting", @"")
-                    action:nil keyEquivalent:@""] setTag:HotkeyInherit];
-        }
-        [[menu addItemWithTitle:NSLocalizedString(@"Disabled", @"")
-                action:nil keyEquivalent:@""] setTag:HotkeyDisabled];
-        [[menu addItemWithTitle:NSLocalizedString(@"Send Key Event", @"")
-                action:nil keyEquivalent:@""] setTag:HotkeyNormalEvent];
-        [[menu addItemWithTitle:NSLocalizedString(@"Pick A Menu Item", @"")
-                action:nil keyEquivalent:@""] setTag:HotkeyMenuItem];
-        [pseudoPop setMenu:menu];
-        [pseudoPop selectItemAtIndex:[pseudoPop indexOfItemWithTag:et]];
+		NSMenu *menu = [[NSMenu alloc] initWithTitle:@"PopUp"];
+		if (![appName isEqualToString:EGGlobalAppName]) {
+			[[menu addItemWithTitle:
+					NSLocalizedString(@"Use Global Setting", @"")
+					action:nil keyEquivalent:@""] setTag:HotkeyInherit];
+		}
+		[[menu addItemWithTitle:NSLocalizedString(@"Disabled", @"")
+				action:nil keyEquivalent:@""] setTag:HotkeyDisabled];
+		[[menu addItemWithTitle:NSLocalizedString(@"Send Key Event", @"")
+				action:nil keyEquivalent:@""] setTag:HotkeyNormalEvent];
+		[[menu addItemWithTitle:NSLocalizedString(@"Pick A Menu Item", @"")
+				action:nil keyEquivalent:@""] setTag:HotkeyMenuItem];
+		[pseudoPop setMenu:menu];
+		[pseudoPop selectItemAtIndex:[pseudoPop indexOfItemWithTag:et]];
 
-        switch (et) {
+		switch (et) {
 		case HotkeyNormalEvent:
 			[label setStringValue:NSLocalizedString(@"Key Sent", @"")];
 			[capture setHidden:NO];
@@ -74,130 +72,130 @@
 			[capture setHidden:YES];
 			[menuLabel setHidden:YES];
 		}
-    }
+	}
 }
 
 - (void)awakeFromNib
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    pseudoEventPopUpArray = [[NSArray alloc] initWithObjects:
-            rightPseudoPopUp, leftPseudoPopUp,
-            horizontalPseudoPopUp, verticalPseudoPopUp,
-            zPathPseudoPopUp, nPathPseudoPopUp,
-            nil];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	
+	pseudoEventPopUpArray = [[NSArray alloc] initWithObjects:
+			rightPseudoPopUp, leftPseudoPopUp,
+			horizontalPseudoPopUp, verticalPseudoPopUp,
+			zPathPseudoPopUp, nPathPseudoPopUp,
+			nil];
 
-    labelArray = [[NSArray alloc] initWithObjects:
-            rightLabel, leftLabel,
-            horizontalLabel, verticalLabel,
-            zPathLabel, nPathLabel,
-            nil];
-    
-    captureArray = [[NSArray alloc] initWithObjects:
-            rightCapture, leftCapture,
-            horizontalCapture, verticalCapture,
-            zPathCapture, nPathCapture,
-            nil];
-    
-    menuLabelArray = [[NSArray alloc] initWithObjects:
-            rightMenuLabel, leftMenuLabel,
-            horizontalMenuLabel, verticalMenuLabel,
-            zPathMenuLabel, nPathMenuLabel,
-            nil];
-    
-    //[usePolling setState:[appController usePollingToTrackPointer]];
-    [gestureSizeMin setIntValue:[appController gestureSizeMin]];
-    [gestureSizeMinLabel setIntValue:[appController gestureSizeMin]];
-    [bringAllCheck setState:
-            [defaults boolForKey:@"BringsAllWindowsToFront"]];
-    [createNewCheck setState:
-            [defaults boolForKey:@"CreatesNewDocumentIfNone"]];
+	labelArray = [[NSArray alloc] initWithObjects:
+			rightLabel, leftLabel,
+			horizontalLabel, verticalLabel,
+			zPathLabel, nPathLabel,
+			nil];
+	
+	captureArray = [[NSArray alloc] initWithObjects:
+			rightCapture, leftCapture,
+			horizontalCapture, verticalCapture,
+			zPathCapture, nPathCapture,
+			nil];
+	
+	menuLabelArray = [[NSArray alloc] initWithObjects:
+			rightMenuLabel, leftMenuLabel,
+			horizontalMenuLabel, verticalMenuLabel,
+			zPathMenuLabel, nPathMenuLabel,
+			nil];
+	
+	//[usePolling setState:[appController usePollingToTrackPointer]];
+	[gestureSizeMin setIntValue:[appController gestureSizeMin]];
+	[gestureSizeMinLabel setIntValue:[appController gestureSizeMin]];
+	[bringAllCheck setState:
+			[defaults boolForKey:@"BringsAllWindowsToFront"]];
+	[createNewCheck setState:
+			[defaults boolForKey:@"CreatesNewDocumentIfNone"]];
 
-    [appTable registerForDraggedTypes:
-            [NSArray arrayWithObject:NSFilenamesPboardType]];
+	[appTable registerForDraggedTypes:
+			[NSArray arrayWithObject:NSPasteboardTypeFileURL]];
 
-    [self _setupEventPrefsForApp:@"_Global"];
-    [self notifWinPosChanged:nil];
+	[self _setupEventPrefsForApp:@"_Global"];
+	[self notifWinPosChanged:nil];
 }
 
 - (void)windowWillClose:(NSNotification *)aNotification
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    NSDictionary *keyDefs = [appController eventKeyDefs];
-    NSMutableDictionary *keyDefsDict = [NSMutableDictionary dictionary];
-    NSEnumerator *anEnum;
-    NSString *key;
-    
-    anEnum = [[keyDefs allKeys] objectEnumerator];
-    while (key = [anEnum nextObject]) {
-        int idx;
-        NSArray *hotkeys = [keyDefs objectForKey:key];
-        NSMutableArray *appArray = [NSMutableArray array];
-        for (idx = 0; idx < [hotkeys count]; idx++) {
-            [appArray addObject:[[hotkeys objectAtIndex:idx] dictionary]];
-        }
-        [keyDefsDict setObject:appArray forKey:key];
-    }
-    
-    [defaults setObject:keyDefsDict forKey:@"EventKeyDefs"];
-    
-    //[defaults setBool:[usePolling state]
-    //        forKey:@"UsePollingToTrackPointer"];
-    [defaults setInteger:[gestureSizeMin intValue]
-            forKey:@"GestureSizeMin"];
-    [defaults setBool:[bringAllCheck state]
-            forKey:@"BringsAllWindowsToFront"];
-    [defaults setBool:[createNewCheck state]
-            forKey:@"CreatesNewDocumentIfNone"];
-    
-    [defaults synchronize];
-    
-    if (![defaults boolForKey:@"ShowStatusBarMenu"])
-        [appController hideStatusBarMenu];
+	NSDictionary *keyDefs = [appController eventKeyDefs];
+	NSMutableDictionary *keyDefsDict = [NSMutableDictionary dictionary];
+	NSEnumerator *anEnum;
+	NSString *key;
+	
+	anEnum = [[keyDefs allKeys] objectEnumerator];
+	while (key = [anEnum nextObject]) {
+		int idx;
+		NSArray *hotkeys = [keyDefs objectForKey:key];
+		NSMutableArray *appArray = [NSMutableArray array];
+		for (idx = 0; idx < [hotkeys count]; idx++) {
+			[appArray addObject:[[hotkeys objectAtIndex:idx] dictionary]];
+		}
+		[keyDefsDict setObject:appArray forKey:key];
+	}
+	
+	[defaults setObject:keyDefsDict forKey:@"EventKeyDefs"];
+	
+	//[defaults setBool:[usePolling state]
+	//		forKey:@"UsePollingToTrackPointer"];
+	[defaults setInteger:[gestureSizeMin intValue]
+			forKey:@"GestureSizeMin"];
+	[defaults setBool:[bringAllCheck state]
+			forKey:@"BringsAllWindowsToFront"];
+	[defaults setBool:[createNewCheck state]
+			forKey:@"CreatesNewDocumentIfNone"];
+	
+	[defaults synchronize];
+	
+	if (![defaults boolForKey:@"ShowStatusBarMenu"])
+		[appController hideStatusBarMenu];
 }
 
 - (IBAction)openPreferenceWindow:(id)sender
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    // Make Expogesture itself a front application
-    [NSApp activateIgnoringOtherApps:YES];
+	// Make Expogesture itself a front application
+	[NSApp activateIgnoringOtherApps:YES];
 
-    // Show Status Menu Bar
-    if (![defaults boolForKey:@"ShowStatusBarMenu"])
-        [appController showStatusBarMenu];
+	// Show Status Menu Bar
+	if (![defaults boolForKey:@"ShowStatusBarMenu"])
+		[appController showStatusBarMenu];
 
-    // Show Preference panel
-    [preferenceWindow makeKeyAndOrderFront:self];
+	// Show Preference panel
+	[preferenceWindow makeKeyAndOrderFront:self];
 }
 
 
 - (IBAction)pseudoEventPopUpSelected:sender
 {
-    int tableRow = [appTable selectedRow];
-    NSString *appName = [self _appNameAtIndex:tableRow];
-    NSArray *keyDefs =
-            [[appController eventKeyDefs] objectForKey:appName];
+	int tableRow = [appTable selectedRow];
+	NSString *appName = [self _appNameAtIndex:tableRow];
+	NSArray *keyDefs =
+			[[appController eventKeyDefs] objectForKey:appName];
 
-    int eventId = [sender tag];
-    HotkeyEvent *hotkey = [keyDefs objectAtIndex:eventId];
+	int eventId = [sender tag];
+	HotkeyEvent *hotkey = [keyDefs objectAtIndex:eventId];
 
-    HotkeyPseudoEventType et = [[sender selectedItem] tag];
-    [hotkey setPseudoEventType:et];
-    [self _setupEventPrefsForApp:appName];
+	HotkeyPseudoEventType et = [[sender selectedItem] tag];
+	[hotkey setPseudoEventType:et];
+	[self _setupEventPrefsForApp:appName];
 }
 
 
 - (IBAction)menuLabelChanged:sender
 {
-    int tableRow = [appTable selectedRow];
-    NSString *appName = [self _appNameAtIndex:tableRow];
-    NSArray *keyDefs =
-            [[appController eventKeyDefs] objectForKey:appName];
+	int tableRow = [appTable selectedRow];
+	NSString *appName = [self _appNameAtIndex:tableRow];
+	NSArray *keyDefs =
+			[[appController eventKeyDefs] objectForKey:appName];
 
-    int eventId = [sender tag];
-    HotkeyEvent *hotkey = [keyDefs objectAtIndex:eventId];
+	int eventId = [sender tag];
+	HotkeyEvent *hotkey = [keyDefs objectAtIndex:eventId];
 
 	[hotkey setMenuLabel:[sender stringValue]];
 }
@@ -205,176 +203,157 @@
 
 - (void)_addEventDefForAppPath:(NSString *)appPath
 {
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    NSMutableDictionary *hotkeyDefRoot;
-    NSArray *globalHotkeyDef, *newHotkeyDef;
-    
-    hotkeyDefRoot = [appController eventKeyDefs];
-    globalHotkeyDef = [hotkeyDefRoot objectForKey:@"_Global"];
-    newHotkeyDef = [[HotkeyEvent hotkeyArrayWithArray:
-            [def objectForKey:@"DefaultHotkeyDefForAnApplication"]
-                count:[globalHotkeyDef count]
-                global:NO] retain];
-    [hotkeyDefRoot setObject:newHotkeyDef forKey:appPath];
+	NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+	NSMutableDictionary *hotkeyDefRoot;
+	NSArray *globalHotkeyDef, *newHotkeyDef;
+	
+	hotkeyDefRoot = [appController eventKeyDefs];
+	globalHotkeyDef = [hotkeyDefRoot objectForKey:@"_Global"];
+	newHotkeyDef = [HotkeyEvent hotkeyArrayWithArray:
+			[def objectForKey:@"DefaultHotkeyDefForAnApplication"]
+				count:[globalHotkeyDef count]
+				global:NO];
+	[hotkeyDefRoot setObject:newHotkeyDef forKey:appPath];
 }
 
 - (void)_didEndOpenSheet:(NSOpenPanel *)panel
-        returnCode:(int)ret contextInfo:(void *)context
+		returnCode:(int)ret contextInfo:(void *)context
 {
-    int idx;
-    NSArray *filesToOpen;
-
-    if (ret != NSOKButton) return;
-
-    filesToOpen = [panel filenames];
-    for (idx = 0; idx < [filesToOpen count]; idx++) {
-        [self _addEventDefForAppPath:[filesToOpen objectAtIndex:idx]];
-    }
-    [appTable reloadData];
-	[self tableSelected:appTable];
+	
 }
 
-- (IBAction)addApplication:(id)sender
+- (IBAction)addApplication: (id)sender
 {
-    NSArray *fileTypes = [NSArray arrayWithObject:@"app"];
-    NSOpenPanel *panel = [NSOpenPanel openPanel];
-    
-    [panel setAllowsMultipleSelection:YES];
-    [panel setCanChooseFiles:YES];
-    [panel beginSheetForDirectory:@"/Applications"
-            file:nil
-            types:fileTypes
-            modalForWindow:[sender window]
-            modalDelegate:self
-            didEndSelector:
-                @selector(_didEndOpenSheet:returnCode:contextInfo:)
-            contextInfo:nil];
+	NSOpenPanel *panel = [NSOpenPanel openPanel]; {
+		[panel setAllowsMultipleSelection:YES];
+		[panel setCanChooseFiles:YES];
+		[panel setDirectoryURL: [NSURL fileURLWithPath: @"/Applications"]];
+		[panel setAllowedFileTypes: @[@"app"]];
+	}
+	[panel beginSheetModalForWindow: [sender window] completionHandler:^(NSInteger result) {
+		if (result == NSModalResponseOK) {
+			for (NSURL* url in panel.URLs) {
+				[self _addEventDefForAppPath: url.absoluteString];
+			}
+			[appTable reloadData];
+			[self tableSelected:appTable];
+		}
+	}];
 }
 
-- (void)_didEndRemoveAleartSheet:(NSWindow *)sheet
-        returnCode:(int)ret contextInfo:ctx
-{
-    if (ret == NSAlertDefaultReturn) return;
-
-    int row;//, numOfRow;
-    NSString *appName;
-    NSMutableDictionary *hotkeyDefRoot;
-
-    row  = [appTable selectedRow];
-    appName = [self _appNameAtIndex:row];
-    hotkeyDefRoot = [appController eventKeyDefs];
-    [hotkeyDefRoot removeObjectForKey:appName];
-
-    [appTable reloadData];
-	[self tableSelected:appTable];
-}
-        
 - (IBAction)removeApplication:(id)sender
 {
-    int row;
-    NSString *appName;
+	int row;
+	NSString *appName;
 
-    row  = [appTable selectedRow];
-    NSArray *localized = [[NSFileManager defaultManager]
-            componentsToDisplayForPath:[self _appNameAtIndex:row]];
-    appName = [localized lastObject];
+	row  = [appTable selectedRow];
+	NSArray *localized = [[NSFileManager defaultManager]
+			componentsToDisplayForPath:[self _appNameAtIndex:row]];
+	appName = [localized lastObject];
 
-    NSBeginAlertSheet(
-        NSLocalizedString(@"Remove Application", @""),
-        NSLocalizedString(@"Cancel", @""),
-        NSLocalizedString(@"Yes", @""),
-        nil,
-        preferenceWindow,
-        self,
-        @selector(_didEndRemoveAleartSheet:returnCode:contextInfo:),
-        NULL,
-        nil,
-        NSLocalizedString(@"Remove %@?", @""),
-        appName);
+	NSAlert* alert = [[NSAlert alloc] init]; {
+		[alert setMessageText: NSLocalizedString(@"Remove Application", @"")];
+		[alert setInformativeText: [NSString stringWithFormat: NSLocalizedString(@"Remove %@?", @""), appName]];
+		[alert addButtonWithTitle: NSLocalizedString(@"Yes", @"")];
+		[alert addButtonWithTitle: NSLocalizedString(@"Cancel", @"")];
+	}
+	[alert beginSheetModalForWindow: preferenceWindow completionHandler: ^(NSModalResponse returnCode) {
+		if (returnCode == NSAlertSecondButtonReturn) {
+			int row;//, numOfRow;
+			NSString *appName;
+			NSMutableDictionary *hotkeyDefRoot;
+			
+			row  = [appTable selectedRow];
+			appName = [self _appNameAtIndex:row];
+			hotkeyDefRoot = [appController eventKeyDefs];
+			[hotkeyDefRoot removeObjectForKey:appName];
+			
+			[appTable reloadData];
+			[self tableSelected:appTable];
+		}
+	}];
 }
 
 - (IBAction)tableSelected:(id)sender
 {
-    int row;
-    NSString *appName;
-    
-    row  = [sender selectedRow];
-    if (row < 0) return;
-    
-    appName = [self _appNameAtIndex:row];
-    if ([appName isEqualToString:@"_Global"])
-        [removeButton setEnabled:NO];
-    else
-        [removeButton setEnabled:YES];
-        
-    [self _setupEventPrefsForApp:appName];
+	int row;
+	NSString *appName;
+	
+	row  = [sender selectedRow];
+	if (row < 0) return;
+	
+	appName = [self _appNameAtIndex:row];
+	if ([appName isEqualToString:@"_Global"])
+		[removeButton setEnabled:NO];
+	else
+		[removeButton setEnabled:YES];
+		
+	[self _setupEventPrefsForApp:appName];
 }
 
 - (IBAction)gestureSizeChanged:sender
 {
-    [appController setGestureSizeMin:[sender intValue]];
-    [gestureSizeMinLabel setIntValue:[sender intValue]];
+	[appController setGestureSizeMin:[sender intValue]];
+	[gestureSizeMinLabel setIntValue:[sender intValue]];
 }
 
 - (IBAction)bringAllCheckSelected:sender
 {
-    [[appController appSwitchView]
-            setBringsAllWindowsToFront:[sender state]];
+
 }
 
 - (IBAction)createNewCheckSelected:sender
 {
-    [[appController appSwitchView]
-            setCreatesNewDocumentIfNone:[sender state]];
+
 }
 
 - (int)numberOfRowsInTableView:(NSTableView *)tableView
 {
-    return [[appController eventKeyDefs] count];
+	return [[appController eventKeyDefs] count];
 }
 
 - tableView:(NSTableView *)tableView
-        objectValueForTableColumn:(NSTableColumn *)tableColumn
-        row:(int)row
+		objectValueForTableColumn:(NSTableColumn *)tableColumn
+		row:(int)row
 {
-    NSString *appName;
-    enum {AppName, FullPath} columnId;
-    
-    if ([[tableColumn identifier] isEqualToString:@"AppName"])
-        columnId = AppName;
-    else
-        columnId = FullPath;
-    
-    appName = [self _appNameAtIndex:row];
-    if ([appName isEqualToString:@"_Global"]) {
-        if (columnId == AppName)
-            appName = NSLocalizedString(@"(Global Definitions)", @"");
-        else
-            appName = @"";
-    } else {
-        NSArray *localized = [[NSFileManager defaultManager]
-                                    componentsToDisplayForPath: appName];
-        if (columnId == AppName)
-            appName = [localized lastObject];
-        else
-            appName = [localized componentsJoinedByString:@":"];
-    }
-    return appName;
+	NSString *appName;
+	enum {AppName, FullPath} columnId;
+	
+	if ([[tableColumn identifier] isEqualToString:@"AppName"])
+		columnId = AppName;
+	else
+		columnId = FullPath;
+	
+	appName = [self _appNameAtIndex:row];
+	if ([appName isEqualToString:@"_Global"]) {
+		if (columnId == AppName)
+			appName = NSLocalizedString(@"(Global Definitions)", @"");
+		else
+			appName = @"";
+	} else {
+		NSArray *localized = [[NSFileManager defaultManager]
+									componentsToDisplayForPath: appName];
+		if (columnId == AppName)
+			appName = [localized lastObject];
+		else
+			appName = [localized componentsJoinedByString:@":"];
+	}
+	return appName;
 }
 
 - (void)appTableView:(EGAppTableView *)view
-        addApplicationPath:(NSString *)path
+		addApplicationPath:(NSString *)path
 {
-    [self _addEventDefForAppPath:path];
-    [appTable reloadData];
+	[self _addEventDefForAppPath:path];
+	[appTable reloadData];
 }
 
 - (IBAction)notifWinPosChanged:sender
 {
-    NSString *pfName = [NSString stringWithFormat:@"NotifPos%d",
-                                [[notifWinPosMatrix selectedCell] tag]];
-    NSImage *previewImg = [NSImage imageNamed:pfName];
-    [notifWinPreview setImage:previewImg];
+	NSString *pfName = [NSString stringWithFormat:@"NotifPos%li",
+			[[notifWinPosMatrix selectedCell] tag] ?: 0];
+	NSImage *previewImg = [NSImage imageNamed:pfName];
+	[notifWinPreview setImage:previewImg];
 }
 
 @end

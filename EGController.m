@@ -1,8 +1,8 @@
 /*
-    Copyright (C) 2003-2006 NAKAHASHI Ichiro
+	Copyright (C) 2003-2006 NAKAHASHI Ichiro
 
-    This program is distributed under the GNU Public License.
-    This program comes with NO WARRANTY.
+	This program is distributed under the GNU Public License.
+	This program comes with NO WARRANTY.
 */
 
 #import <Carbon/Carbon.h>
@@ -22,71 +22,71 @@
 // Note: The order of EGMoveDirection constants are important;
 // see method _mouseHasMovedBy:
 typedef enum {
-    EGMDNil,
-    EGMDStraightNW,
-    EGMDStraightW,
-    EGMDStraightSW,
-    EGMDStraightS,
-    EGMDStraightSE,
-    EGMDStraightE,
-    EGMDStraightNE,
-    EGMDStraightN,
-    EGMDRotateRight,
-    EGMDRotateLeft,
+	EGMDNil,
+	EGMDStraightNW,
+	EGMDStraightW,
+	EGMDStraightSW,
+	EGMDStraightS,
+	EGMDStraightSE,
+	EGMDStraightE,
+	EGMDStraightNE,
+	EGMDStraightN,
+	EGMDRotateRight,
+	EGMDRotateLeft,
 } EGMoveDirection;
 
 static const EGMoveDirection EGGTRotateRight[] =
-    {EGMDRotateRight, EGMDNil};
+	{EGMDRotateRight, EGMDNil};
 static const EGMoveDirection EGGTRotateLeft[] =
-    {EGMDRotateLeft, EGMDNil};
+	{EGMDRotateLeft, EGMDNil};
 static const EGMoveDirection EGGTHorizontal[] =
-    {EGMDStraightE, EGMDStraightW, EGMDStraightE, EGMDStraightW,
-        EGMDNil};
+	{EGMDStraightE, EGMDStraightW, EGMDStraightE, EGMDStraightW,
+		EGMDNil};
 static const EGMoveDirection EGGTVertical[] =
-    {EGMDStraightN, EGMDStraightS, EGMDStraightN, EGMDStraightS,
-        EGMDNil};
+	{EGMDStraightN, EGMDStraightS, EGMDStraightN, EGMDStraightS,
+		EGMDNil};
 static const EGMoveDirection EGGTZPath[] =
-    {EGMDStraightE, EGMDStraightSW, EGMDStraightE, EGMDStraightNW,
-        EGMDNil};
+	{EGMDStraightE, EGMDStraightSW, EGMDStraightE, EGMDStraightNW,
+		EGMDNil};
 static const EGMoveDirection EGGTNPath[] =
-    {EGMDStraightN, EGMDStraightSE, EGMDStraightN, EGMDStraightSW,
-        EGMDNil};
+	{EGMDStraightN, EGMDStraightSE, EGMDStraightN, EGMDStraightSW,
+		EGMDNil};
 static const EGMoveDirection *GestureTemplates[] = {
-    EGGTRotateRight,
-    EGGTRotateLeft,
-    EGGTHorizontal,
-    EGGTVertical,
-    EGGTZPath,
-    EGGTNPath,
+	EGGTRotateRight,
+	EGGTRotateLeft,
+	EGGTHorizontal,
+	EGGTVertical,
+	EGGTZPath,
+	EGGTNPath,
 };
 static const int GestureTemplateCount
-        = sizeof(GestureTemplates) / sizeof(EGMoveDirection *);
+		= sizeof(GestureTemplates) / sizeof(EGMoveDirection *);
 
 @implementation EGController
 
 - (void) _resetGestureProgresses
 {
-    int idx;
-    for (idx = 0; idx < GestureTemplateCount; idx++)
-        gestureProgresses[idx] = 0;
+	int idx;
+	for (idx = 0; idx < GestureTemplateCount; idx++)
+		gestureProgresses[idx] = 0;
 }
 
 - (void)_showNotifWindowWithText:(NSString *)text
 {
-    // Notification window should not averlap mouse pointer...
-    static NSPoint notifWindowPosList[] = {
-    {0.5,  0.5 },   // center
-    {0.25, 0.75},   // upper-right
-    {0.75, 0.75},   // upper-left
-    {0.25, 0.25},   // lower-right
-    {0.75, 0.25},   // lower-left
-    };
+	// Notification window should not averlap mouse pointer...
+	static NSPoint notifWindowPosList[] = {
+	{0.5,  0.5 },   // center
+	{0.25, 0.75},   // upper-right
+	{0.75, 0.75},   // upper-left
+	{0.25, 0.25},   // lower-right
+	{0.75, 0.25},   // lower-left
+	};
 	
-    NSRect screenRect = [[NSScreen screenUnderMouse] frame];
+	NSRect screenRect = [[NSScreen screenUnderMouse] frame];
 	NSRect viewFrame;
 	NSSize textSize, windowSize;;
 
-    [notifView setText:text];
+	[notifView setText:text];
 	
 	viewFrame = [notifView frame];
 	textSize = [[notifView attributedStringValue] size];
@@ -97,55 +97,63 @@ static const int GestureTemplateCount
 	}
 	[notifWindow setContentSize:windowSize];
 	
-    NSUserDefaults *udef = [NSUserDefaults standardUserDefaults];
-    int posIdx = [udef integerForKey:@"NotifWindowPosition"];
-    NSPoint wp = notifWindowPosList[posIdx];
-    wp.x = wp.x * screenRect.size.width + screenRect.origin.x;
-    wp.y = wp.y * screenRect.size.height + screenRect.origin.y;
-    [notifWindow setFrameCenteredAt:wp];
-    
-    [notifWindow orderFrontRegardless];
+	NSUserDefaults *udef = [NSUserDefaults standardUserDefaults];
+	int posIdx = [udef integerForKey:@"NotifWindowPosition"];
+	NSPoint wp = notifWindowPosList[posIdx];
+	wp.x = wp.x * screenRect.size.width + screenRect.origin.x;
+	wp.y = wp.y * screenRect.size.height + screenRect.origin.y;
+	[notifWindow setFrameCenteredAt:wp];
+	
+	[notifWindow orderFrontRegardless];
 
-    [notifWindowTimer invalidate];	// reset timer if already shown
-    notifWindowTimer =
-            [NSTimer scheduledTimerWithTimeInterval: 1.0
-                        target: self
-                        selector: @selector(_dismissNotifWindow:)
-                        userInfo: nil
-                        repeats: NO];
+	[notifWindowTimer invalidate];	// reset timer if already shown
+	notifWindowTimer =
+			[NSTimer scheduledTimerWithTimeInterval: 0.4f
+						target: self
+						selector: @selector(_dismissNotifWindow:)
+						userInfo: nil
+						repeats: NO];
 }
 
-
-- _generateKeyEvent:(HotkeyEvent *)thisKey
+-(void)sendKeyEventWithKeyCode: (CGKeyCode)keyCode isDown: (BOOL)isDown
 {
-    [self _showNotifWindowWithText:[thisKey localizedDescription]];
+	CGEventRef event = CGEventCreateKeyboardEvent(nil, keyCode, isDown);
+	CGEventPost(kCGSessionEventTap, event);
+	CFRelease(event);
+}
 
-    if ([thisKey ctrl])  CGPostKeyboardEvent(0, 59, true);
-    if ([thisKey alt])   CGPostKeyboardEvent(0, 58, true);
-    if ([thisKey cmd])   CGPostKeyboardEvent(0, 55, true);
-    if ([thisKey shift]) CGPostKeyboardEvent(0, 56, true);
-    
-    CGPostKeyboardEvent(0, [thisKey keyCode], true);
-    CGPostKeyboardEvent(0, [thisKey keyCode], false);
+- _generateKeyEvent:(HotkeyEvent *)hotkeyEvent
+{
+	[self _showNotifWindowWithText:[hotkeyEvent localizedDescription]];
 
-    if ([thisKey shift]) CGPostKeyboardEvent(0, 56, false);
-    if ([thisKey cmd])   CGPostKeyboardEvent(0, 55, false);
-    if ([thisKey alt])   CGPostKeyboardEvent(0, 58, false);
-    if ([thisKey ctrl])  CGPostKeyboardEvent(0, 59, false);
-    
-    return self;
+	if ([hotkeyEvent ctrl])  [self sendKeyEventWithKeyCode: 59 isDown: true];
+	if ([hotkeyEvent alt])   [self sendKeyEventWithKeyCode: 58 isDown: true];
+	if ([hotkeyEvent cmd])  [self sendKeyEventWithKeyCode: 55 isDown: true];
+	if ([hotkeyEvent shift]) [self sendKeyEventWithKeyCode: 56 isDown: true];
+	
+	[self sendKeyEventWithKeyCode: hotkeyEvent.keyCode isDown: true];
+	[self sendKeyEventWithKeyCode: hotkeyEvent.keyCode isDown: false];
+
+	if ([hotkeyEvent shift]) [self sendKeyEventWithKeyCode: 56 isDown: true];
+	if ([hotkeyEvent cmd]) [self sendKeyEventWithKeyCode: 55 isDown: true];
+	if ([hotkeyEvent alt]) [self sendKeyEventWithKeyCode: 58 isDown: true];
+	if ([hotkeyEvent ctrl]) [self sendKeyEventWithKeyCode: 59 isDown: true];
+	
+	return self;
 }
 
 
 AXUIElementRef _menuItemForTitle(AXUIElementRef menuBarRef, NSString *targetTitle)
 {
 	AXError err;
-	NSArray *menuItemArray;
 	
+	
+	CFTypeRef menuItemArray_cf = NULL;
 	// Obtain List of Child Items
-	err = AXUIElementCopyAttributeValue(menuBarRef, kAXChildrenAttribute, (CFTypeRef *)&menuItemArray);
+	err = AXUIElementCopyAttributeValue(menuBarRef, kAXChildrenAttribute, &menuItemArray_cf);
 	if (err != kAXErrorSuccess) return nil;		// Leaf node, no children.
-	[menuItemArray autorelease];
+	
+	NSArray *menuItemArray = (__bridge_transfer id)menuItemArray_cf;
 	int menuCount = [menuItemArray count];
 	
 	AXUIElementRef menuItem;
@@ -153,17 +161,19 @@ AXUIElementRef _menuItemForTitle(AXUIElementRef menuBarRef, NSString *targetTitl
 	int i;
 	
 	for (i = 0; i < menuCount; i++) {
-	
+		
+		menuItem = (__bridge AXUIElementRef)[menuItemArray objectAtIndex:i];
+		
 		// Check for Titles
-		menuItem = (AXUIElementRef)[menuItemArray objectAtIndex:i];
-		err = AXUIElementCopyAttributeValue(menuItem, kAXTitleAttribute, (CFTypeRef *)&menuTitle);
+		CFTypeRef menuTitle_cf = NULL;
+		err = AXUIElementCopyAttributeValue(menuItem, kAXTitleAttribute, &menuTitle_cf);
 		if (err == kAXErrorSuccess) {
-			[menuTitle autorelease];
+			menuTitle = (__bridge_transfer id)menuTitle_cf;
 			if ([menuTitle isEqualTo:targetTitle]) return menuItem;
 		}
 
 		// Dig Into Child Nodes
-		menuItem = (AXUIElementRef)[menuItemArray objectAtIndex:i];
+		menuItem = (__bridge AXUIElementRef)[menuItemArray objectAtIndex:i];
 		menuItem = _menuItemForTitle(menuItem, targetTitle);
 		if (menuItem) {
 			return menuItem;
@@ -173,26 +183,34 @@ AXUIElementRef _menuItemForTitle(AXUIElementRef menuBarRef, NSString *targetTitl
 	return nil;
 }
 
+- (NSRunningApplication*)activeApplication
+{
+	for (NSRunningApplication* app in NSWorkspace.sharedWorkspace.runningApplications) {
+		if ([app isActive]) {
+			return app;
+		}
+	}
+	return nil;
+}
 
 - (void)_pickMenuItemForPseudoEvent:(HotkeyEvent *)thisEvent
 {
 	AXError err;
-	AXUIElementRef menuBarRef;
 	AXUIElementRef targetMenuItem;
 	id targetMenuTitle;
 	
 	NSString *menuLabel = [thisEvent menuLabel];
 	[self _showNotifWindowWithText:menuLabel];
 	
-	NSDictionary *activeAppDict = [[NSWorkspace sharedWorkspace] activeApplication];
-	pid_t activeAppPid = [[activeAppDict objectForKey:@"NSApplicationProcessIdentifier"] intValue];
+	pid_t activeAppPid = [self activeApplication].processIdentifier;
 	
 	// Check if target menu item is cached
 	if ([thisEvent pidCache] == activeAppPid) {
 		targetMenuItem = [thisEvent menuItemRefCache];
-		err = AXUIElementCopyAttributeValue(targetMenuItem, kAXTitleAttribute, (CFTypeRef *)&targetMenuTitle);
+		CFTypeRef value = NULL;
+		err = AXUIElementCopyAttributeValue(targetMenuItem, kAXTitleAttribute, &value);
+		targetMenuTitle = (__bridge_transfer id)value;
 		if (err == kAXErrorSuccess) {
-			[targetMenuTitle autorelease];
 			if  ([targetMenuTitle isEqualToString:[thisEvent menuLabel]])
 				goto pickMenu;  // Found; do it immediately
 		}
@@ -200,9 +218,9 @@ AXUIElementRef _menuItemForTitle(AXUIElementRef menuBarRef, NSString *targetTitl
 	
 	// Item is not cached. Get Top-level UIElement for Frontmost Application
 	AXUIElementRef appRef = AXUIElementCreateApplication(activeAppPid);
-	[(id)appRef autorelease];
 	
 	// Get Menu Bar UIElement
+	AXUIElementRef menuBarRef;
 	err = AXUIElementCopyAttributeValue(appRef, kAXMenuBarAttribute, (CFTypeRef *)&menuBarRef);
 	if (err != kAXErrorSuccess) {
 		if (err == kAXErrorAPIDisabled) {
@@ -212,10 +230,11 @@ AXUIElementRef _menuItemForTitle(AXUIElementRef menuBarRef, NSString *targetTitl
 		}
 		return;
 	}
-	[(id)menuBarRef autorelease];
+	if (appRef) CFRelease(appRef);
 	
 	// Find Menu Item Labeled 'menuLabel'
 	targetMenuItem = _menuItemForTitle(menuBarRef, menuLabel);
+	if (menuBarRef) CFRelease(menuBarRef);
 	
 	// Cache it for later re-use
 	[thisEvent setPidCache:activeAppPid];
@@ -227,340 +246,315 @@ pickMenu:
 		err = AXUIElementPerformAction(targetMenuItem, kAXPickAction);
 	} else {
 		NSBeep();
-		NSLog(@"Menu \"%@\" not found.", menuLabel);
+		NSLog(@"Menu “%@” not found.", menuLabel);
 	}
 }
 
 
 - (BOOL)_isModifiersPressed
 {
-    BOOL flag = NO;
-    KeyMap km;
+	BOOL flag = NO;
+	KeyMap km;
 	long k;
-    enum {
-        km1ShiftMask = 0x1,
-        km1AltMask = 0x4,
-        km1CtrlMask = 0x8,
-        km1SpaceMask = 0x200,
-        km1CmdMask = 0x8000,
-    };
-    
-    GetKeys(km);
-    //NSLog(@"%X %X %X %X", km[0], km[1], km[2], km[3]);
+	enum {
+		km1ShiftMask = 0x1,
+		km1AltMask = 0x4,
+		km1CtrlMask = 0x8,
+		km1SpaceMask = 0x200,
+		km1CmdMask = 0x8000,
+	};
+	
+	GetKeys(km);
+	//NSLog(@"%X %X %X %X", km[0], km[1], km[2], km[3]);
 	#if TARGET_RT_LITTLE_ENDIAN
 	k = CFSwapInt32BigToHost(km[1].bigEndianValue);
 	#else
 	k = km[1];
 	#endif
-    if (k & (km1ShiftMask | km1AltMask | km1CtrlMask |
-            km1SpaceMask | km1CmdMask)) flag |= YES;
-    if (Button()) flag |= YES;
-    return flag;
+	if (k & (km1ShiftMask | km1AltMask | km1CtrlMask |
+			km1SpaceMask | km1CmdMask)) flag |= YES;
+	if (NSEvent.pressedMouseButtons != 0) flag |= YES;
+	return flag;
 }
 
 - _generatePseudoEvent:(int)eventId
 {
-    NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
-    NSArray *appHotkeyDefs;
-    HotkeyEvent *thisKey;
+	NSArray *appHotkeyDefs;
+	HotkeyEvent *thisKey;
 
-    if ([self _isModifiersPressed]) {
-        NSLog(@"A gesture has been blocked "
-                @"because some modifiers are pressed.");
-        return self;
-    }
-    
-    appHotkeyDefs = [eventKeyDefs objectForKey:
-            [[workspace activeApplication] 
-                objectForKey:@"NSApplicationPath"]];
-    if (appHotkeyDefs) {
-        thisKey = [appHotkeyDefs objectAtIndex:eventId];
-        if ([thisKey pseudoEventType] == HotkeyInherit) {
-            thisKey = [keyDefsGlobal objectAtIndex:eventId];
-        }
-    } else {
-        thisKey = [keyDefsGlobal objectAtIndex:eventId];
-    }
+	if ([self _isModifiersPressed]) {
+		NSLog(@"A gesture has been blocked "
+				@"because some modifiers are pressed.");
+		return self;
+	}
+	
+	appHotkeyDefs = [eventKeyDefs objectForKey:
+			self.activeApplication.bundleURL.path];
+	if (appHotkeyDefs) {
+		thisKey = [appHotkeyDefs objectAtIndex:eventId];
+		if ([thisKey pseudoEventType] == HotkeyInherit) {
+			thisKey = [keyDefsGlobal objectAtIndex:eventId];
+		}
+	} else {
+		thisKey = [keyDefsGlobal objectAtIndex:eventId];
+	}
 
-    switch ([thisKey pseudoEventType]) {
-    case HotkeyDisabled:
-        NSLog(@"This event is disabled.");
-        break;
-    case HotkeyNormalEvent:
-        [self _generateKeyEvent:thisKey];
-        break;
+	switch ([thisKey pseudoEventType]) {
+	case HotkeyDisabled:
+		NSLog(@"This event is disabled.");
+		break;
+	case HotkeyNormalEvent:
+		[self _generateKeyEvent:thisKey];
+		break;
 	case HotkeyMenuItem:
 		[self _pickMenuItemForPseudoEvent:thisKey];
 		break;
-    default:
-        NSLog(@"Unknown pseudo event type %d", [thisKey pseudoEventType]);
-    }
-    return self;
+	default:
+		NSLog(@"Unknown pseudo event type %d", [thisKey pseudoEventType]);
+	}
+	return self;
 }
 
 - _composeGesture:(EGMoveDirection)thisMove;
 {
-    int eventId = -1, idx;
-    struct timeval tv;
-    unsigned long thisTimestamp;
-    
-    gettimeofday(&tv, NULL);
-    thisTimestamp = tv.tv_sec * 1000 + (tv.tv_usec / 1000);
-    
-    // Block gestures if input comes too frequent.
-    if (thisTimestamp - lastIssuedTimestamp < 800)
-        return self;
+	int eventId = -1, idx;
+	struct timeval tv;
+	unsigned long thisTimestamp;
+	
+	gettimeofday(&tv, NULL);
+	thisTimestamp = tv.tv_sec * 1000 + (tv.tv_usec / 1000);
+	
+	// Block gestures if input comes too frequent.
+	if (thisTimestamp - lastIssuedTimestamp < 800)
+		return self;
 
-    // Reset all gesture recognitions if input comes too slow.
-    if (thisTimestamp - lastMoveTimestamp > 300) {
-        [self _resetGestureProgresses];
-    }
-    
-    for (idx = 0; idx < GestureTemplateCount; idx++) {
-        int *gp = &gestureProgresses[idx];
-        if (GestureTemplates[idx][*gp] == thisMove) {
-            (*gp)++;
-            if (GestureTemplates[idx][*gp] == EGMDNil) {
-                eventId = idx;
-                break;
-            }
-        }
-    }
-    if (eventId >= 0) {
-        [self _generatePseudoEvent:eventId];
-        [self _resetGestureProgresses];
-        lastIssuedTimestamp = thisTimestamp;
-    }
+	// Reset all gesture recognitions if input comes too slow.
+	if (thisTimestamp - lastMoveTimestamp > 300) {
+		[self _resetGestureProgresses];
+	}
+	
+	for (idx = 0; idx < GestureTemplateCount; idx++) {
+		int *gp = &gestureProgresses[idx];
+		if (GestureTemplates[idx][*gp] == thisMove) {
+			(*gp)++;
+			if (GestureTemplates[idx][*gp] == EGMDNil) {
+				eventId = idx;
+				break;
+			}
+		}
+	}
+	if (eventId >= 0) {
+		[self _generatePseudoEvent:eventId];
+		[self _resetGestureProgresses];
+		lastIssuedTimestamp = thisTimestamp;
+	}
 
-    lastMoveTimestamp = thisTimestamp;
-    return self;
+	lastMoveTimestamp = thisTimestamp;
+	return self;
 }
 
 -(void)_dismissNotifWindow:userInfo
 {
-    [notifWindow orderOutWithFade:self];
-    notifWindowTimer = nil;
+	[notifWindow orderOutWithFade:self];
+	notifWindowTimer = nil;
 }
 
 //#define DEBUGME
 - (void)_mouseHasMovedBy:(NSSize)move
 {
 #ifdef DEBUGME
-    static int debugCount = 0;
+	static int debugCount = 0;
 #endif
-    int nowDirection;
-    int nowRotation;
-    float nowSpeed, nowDPhi;
-    float meanSpeed;
-    float meanDPhi;
-    struct timeval tv;
-    unsigned long thisTimestamp;
+	int nowDirection;
+	int nowRotation;
+	float nowSpeed, nowDPhi;
+	float meanSpeed;
+	float meanDPhi;
+	struct timeval tv;
+	unsigned long thisTimestamp;
 
-    if (sessionIsHidden) return;
-    
-    gettimeofday(&tv, NULL);
-    thisTimestamp = tv.tv_sec * 1000 + (tv.tv_usec / 1000);
-    if (thisTimestamp - lastMouseMoveTimestamp > mouseMoveTimeout) {
-        currentDirection = 0;
-        currentRotation = 0;
-        //NSLog(@"mouseHasMovedBy: - timeout (%ld)", thisTimestamp - lastMouseMoveTimestamp);
-    }
-    
-    nowPhi = atan2(move.width, move.height);
-    nowSpeed = sqrt(move.width*move.width + move.height*move.height);
-    nowDPhi = lastPhi - nowPhi;
-    if (nowDPhi > M_PI) nowDPhi -= 2*M_PI;
-    else if (nowDPhi < -M_PI) nowDPhi += 2*M_PI;
-    
-    meanSpeed = (lastSpeed + nowSpeed) / 2;
-    meanDPhi = (lastDPhi + nowDPhi) / 2;
-    
-    // Check whether pointer is moving straight-forward
-    nowDirection = (int)floorf(nowPhi/M_PI_4 + 4.5);
-    if (nowDirection == 0) nowDirection = 8;
-    if (currentDirection == nowDirection) {
-        motionAmount += nowSpeed;
-        //NSLog(@"ma=%d (min=%d)", motionAmount, gestureSizeMin);
-        if (motionAmount >= gestureSizeMin) {
-            //NSLog(@"nowDirection=%d", nowDirection);
-            [self _composeGesture:nowDirection];
-            motionAmount = INT_MIN;
-        }
-    } else {
-        currentDirection = nowDirection;
-        motionAmount = 0;
-    }
+	if (sessionIsHidden) return;
+	
+	gettimeofday(&tv, NULL);
+	thisTimestamp = tv.tv_sec * 1000 + (tv.tv_usec / 1000);
+	if (thisTimestamp - lastMouseMoveTimestamp > mouseMoveTimeout) {
+		currentDirection = 0;
+		currentRotation = 0;
+		//NSLog(@"mouseHasMovedBy: - timeout (%ld)", thisTimestamp - lastMouseMoveTimestamp);
+	}
+	
+	nowPhi = atan2(move.width, move.height);
+	nowSpeed = sqrt(move.width*move.width + move.height*move.height);
+	nowDPhi = lastPhi - nowPhi;
+	if (nowDPhi > M_PI) nowDPhi -= 2*M_PI;
+	else if (nowDPhi < -M_PI) nowDPhi += 2*M_PI;
+	
+	meanSpeed = (lastSpeed + nowSpeed) / 2;
+	meanDPhi = (lastDPhi + nowDPhi) / 2;
+	
+	// Check whether pointer is moving straight-forward
+	nowDirection = (int)floorf(nowPhi/M_PI_4 + 4.5);
+	if (nowDirection == 0) nowDirection = 8;
+	if (currentDirection == nowDirection) {
+		motionAmount += nowSpeed;
+		//NSLog(@"ma=%d (min=%d)", motionAmount, gestureSizeMin);
+		if (motionAmount >= gestureSizeMin) {
+			//NSLog(@"nowDirection=%d", nowDirection);
+			[self _composeGesture:nowDirection];
+			motionAmount = INT_MIN;
+		}
+	} else {
+		currentDirection = nowDirection;
+		motionAmount = 0;
+	}
 
-    // Check if pointer is making a part of arc
-    float absDPhi = fabs(meanDPhi);
-    if (M_PI/5.0 > absDPhi && absDPhi > 0.08) {
-        float radius = meanSpeed / sin(absDPhi);
-        //NSLog(@"r=%.1f", radius);
-        if (radius * 2 >= gestureSizeMin) {
-            nowRotation = meanDPhi > 0 ? EGMDRotateRight : EGMDRotateLeft;
-            if (currentRotation != nowRotation) {
-                currentRotation = nowRotation;
-                rotateAmount = 0.0;
-            }
-            rotateAmount += absDPhi;
-            if (rotateAmount > M_PI*2) {
-                [self _composeGesture:nowRotation];
-                rotateAmount = 0.0;
-            }
-        }
-    }
+	// Check if pointer is making a part of arc
+	float absDPhi = fabs(meanDPhi);
+	if (M_PI/5.0 > absDPhi && absDPhi > 0.08) {
+		float radius = meanSpeed / sin(absDPhi);
+		//NSLog(@"r=%.1f", radius);
+		if (radius * 2 >= gestureSizeMin) {
+			nowRotation = meanDPhi > 0 ? EGMDRotateRight : EGMDRotateLeft;
+			if (currentRotation != nowRotation) {
+				currentRotation = nowRotation;
+				rotateAmount = 0.0;
+			}
+			rotateAmount += absDPhi;
+			if (rotateAmount > M_PI*2) {
+				[self _composeGesture:nowRotation];
+				rotateAmount = 0.0;
+			}
+		}
+	}
 
-    // Note that detection processes of lines and circles are
-    // non-exclusive.
-    
+	// Note that detection processes of lines and circles are
+	// non-exclusive.
+	
 #ifdef DEBUGME
-    //printf("(%.2f) ", nowSpeed);
-    printf("(%d, %.2f) ", nowDirection, nowPhi);
-    if (debugCount ++ > 5) {
-        debugCount = 0;
-        printf("\n");
-    }
+	//printf("(%.2f) ", nowSpeed);
+	printf("(%d, %.2f) ", nowDirection, nowPhi);
+	if (debugCount ++ > 5) {
+		debugCount = 0;
+		printf("¥n");
+	}
 #endif
-    lastPhi = nowPhi;
-    lastDPhi = nowDPhi;
-    lastSpeed = nowSpeed;
-    lastMouseMoveTimestamp = thisTimestamp;
+	lastPhi = nowPhi;
+	lastDPhi = nowDPhi;
+	lastSpeed = nowSpeed;
+	lastMouseMoveTimestamp = thisTimestamp;
 }
 
 - (void)_timerEvent:userInfo
 {
-    NSPoint currentPoint = [NSEvent mouseLocation];
-    NSSize mouseMove = NSMakeSize(
-            currentPoint.x - lastMousePoint.x,
-            - (currentPoint.y - lastMousePoint.y));	// flip Y coord.
-    if (mouseMove.width || mouseMove.height)
-        [self _mouseHasMovedBy:mouseMove];
-    lastMousePoint = currentPoint;
-}
+	NSPoint currentPoint = [NSEvent mouseLocation];
+	NSSize mouseMove = NSMakeSize(
+			currentPoint.x - lastMousePoint.x,
+			- (currentPoint.y - lastMousePoint.y));	// flip Y coord.
+	if (mouseMove.width || mouseMove.height)
+		[self _mouseHasMovedBy:mouseMove];
+	lastMousePoint = currentPoint;
 }
 
 - (void)_userSwitchHandler:(NSNotification *)notif
 {
-    sessionIsHidden = [[notif name] isEqualToString:NSWorkspaceSessionDidResignActiveNotification];
-    NSLog(@"Sesssion becomes %@", sessionIsHidden ? @"Hidden" : @"Visible");
+	sessionIsHidden = [[notif name] isEqualToString:NSWorkspaceSessionDidResignActiveNotification];
+	NSLog(@"Sesssion becomes %@", sessionIsHidden ? @"Hidden" : @"Visible");
 }
 
 void _reopenApplication(ProcessSerialNumber psn)
 {
-    OSStatus err;
-    AEAddressDesc targetDesc;
-    AppleEvent ev;
-    
-    err = AECreateDesc(typeProcessSerialNumber, &psn, sizeof(psn), &targetDesc);
-    err = AECreateAppleEvent(kCoreEventClass, kAEReopenApplication, &targetDesc, kAutoGenerateReturnID, kAnyTransactionID, &ev);
-    err = AESendMessage(&ev, NULL, kAENoReply, kAEDefaultTimeout);
+	OSStatus err;
+	AEAddressDesc targetDesc;
+	AppleEvent ev;
+	
+	err = AECreateDesc(typeProcessSerialNumber, &psn, sizeof(psn), &targetDesc);
+	err = AECreateAppleEvent(kCoreEventClass, kAEReopenApplication, &targetDesc, kAutoGenerateReturnID, kAnyTransactionID, &ev);
+	err = AESendMessage(&ev, NULL, kAENoReply, kAEDefaultTimeout);
 }
 
 - init
 {
-    [super init];
+	self = [super init];
 
-    // Check if Expogesture is already running
-    ProcessSerialNumber psn = {kNoProcess, kNoProcess}, myPsn;
-    NSDictionary *pid;
-    Boolean psnIsSame;
-    GetCurrentProcess(&myPsn);
-    while (GetNextProcess(&psn) != procNotFound) {
-        pid = (NSDictionary *)ProcessInformationCopyDictionary(
-                &psn, kProcessDictionaryIncludeAllInformationMask);
-        SameProcess(&psn, &myPsn, &psnIsSame);
-        if ([[pid objectForKey:@"CFBundleName"] isEqualToString:@"Expogesture"]
-                && !psnIsSame)  {
-            NSLog(@"Another copy is running.  Reopening it...");
-            _reopenApplication(psn);
-            [NSApp terminate:self];
-        }
-    }
+	// Check if Expogesture is already running
+	NSMutableArray<NSRunningApplication*>* otherInstances = [NSRunningApplication runningApplicationsWithBundleIdentifier: NSBundle.mainBundle.bundleIdentifier].mutableCopy;
+	[otherInstances removeObject: NSRunningApplication.currentApplication];
+	if (otherInstances.count > 0) {
+		[otherInstances.firstObject activateWithOptions: NSApplicationActivateAllWindows];
+		[NSApp terminate:self];
+	}
 
-    // Install Fast User Switch Handler
-    NSNotificationCenter *sharedCenter =
-            [[NSWorkspace sharedWorkspace] notificationCenter];
-    [sharedCenter
-            addObserver:self
-            selector:@selector(_userSwitchHandler:)
-            name:NSWorkspaceSessionDidBecomeActiveNotification 
-            object:nil];
-    [sharedCenter
-            addObserver:self 
-            selector:@selector(_userSwitchHandler:)
-            name:NSWorkspaceSessionDidResignActiveNotification 
-            object:nil];
+	// Install Fast User Switch Handler
+	NSNotificationCenter *sharedCenter =
+			[[NSWorkspace sharedWorkspace] notificationCenter];
+	[sharedCenter
+			addObserver:self
+			selector:@selector(_userSwitchHandler:)
+			name:NSWorkspaceSessionDidBecomeActiveNotification 
+			object:nil];
+	[sharedCenter
+			addObserver:self 
+			selector:@selector(_userSwitchHandler:)
+			name:NSWorkspaceSessionDidResignActiveNotification 
+			object:nil];
 
-    gestureProgresses = malloc(sizeof(int) * GestureTemplateCount);
-    [self _resetGestureProgresses];
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *keyDefsDict;
-    
-    mouseMoveTimeout = 100;		// in msec
-    pointerPollingInterval = 0.02;	// in sec
+	gestureProgresses = malloc(sizeof(int) * GestureTemplateCount);
+	[self _resetGestureProgresses];
+	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSDictionary *keyDefsDict;
+	
+	mouseMoveTimeout = 100;		// in msec
+	pointerPollingInterval = 0.02;	// in sec
 
-    // Load default user defaults
-    NSDictionary *defaultDefaults =
-            [NSDictionary dictionaryWithContentsOfFile:
-                [[NSBundle mainBundle]
-                    pathForResource:@"DefaultDefaults"
-                    ofType:@"plist"]];
-    [defaults registerDefaults:defaultDefaults];
+	// Load default user defaults
+	NSDictionary *defaultDefaults =
+			[NSDictionary dictionaryWithContentsOfFile:
+				[[NSBundle mainBundle]
+					pathForResource:@"DefaultDefaults"
+					ofType:@"plist"]];
+	[defaults registerDefaults:defaultDefaults];
 
-    gestureSizeMin = [defaults integerForKey:@"GestureSizeMin"];
+	gestureSizeMin = [defaults integerForKey:@"GestureSizeMin"];
 
-    // Construct pseudo key-event definitions from user defaults, or create
-    // new one on failure.
-    eventKeyDefs = [[NSMutableDictionary alloc] init];
-    keyDefsDict = [defaults objectForKey:@"EventKeyDefs"];
-    NSString *appName;
-    NSEnumerator *anEnum = [[keyDefsDict allKeys] objectEnumerator];
-    while (appName = [anEnum nextObject]) {
-        NSArray *appArray = [keyDefsDict objectForKey:appName];
-        NSArray *hotkeys = [HotkeyEvent hotkeyArrayWithArray:appArray
-                count:GestureTemplateCount
-                global:[appName isEqualToString:EGGlobalAppName]];
-        [eventKeyDefs setObject:hotkeys forKey:appName];
-        if ([appName isEqualToString:EGGlobalAppName])
-            keyDefsGlobal = hotkeys;
-    }
-    
-    return self;
+	// Construct pseudo key-event definitions from user defaults, or create
+	// new one on failure.
+	eventKeyDefs = [[NSMutableDictionary alloc] init];
+	keyDefsDict = [defaults objectForKey:@"EventKeyDefs"];
+	NSString *appName;
+	NSEnumerator *anEnum = [[keyDefsDict allKeys] objectEnumerator];
+	while (appName = [anEnum nextObject]) {
+		NSArray *appArray = [keyDefsDict objectForKey:appName];
+		NSArray *hotkeys = [HotkeyEvent hotkeyArrayWithArray:appArray
+				count:GestureTemplateCount
+				global:[appName isEqualToString:EGGlobalAppName]];
+		[eventKeyDefs setObject:hotkeys forKey:appName];
+		if ([appName isEqualToString:EGGlobalAppName])
+			keyDefsGlobal = hotkeys;
+	}
+	
+	return self;
 }
 
 - (void)dealloc
 {
-    [notifWindow release];
-    [appSwitchWindow release];
-    
-    free(gestureProgresses);
-	
-	[super dealloc];
+	free(gestureProgresses);
 }
 
 - (void)awakeFromNib
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    // Setup a notification window, which is shown when pseudo key-event
-    // is generated.
-    [notifWindow setIgnoresMouseEvents:YES];
-    
-    // Setup an AppSwitch window
-    [appSwitchView setBringsAllWindowsToFront:
-            [defaults boolForKey:@"BringsAllWindowsToFront"]];
-    [appSwitchView setCreatesNewDocumentIfNone:
-            [defaults boolForKey:@"CreatesNewDocumentIfNone"]];
+	// Setup a notification window, which is shown when pseudo key-event
+	// is generated.
+	[notifWindow setIgnoresMouseEvents:YES];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if ([defaults boolForKey:@"ShowStatusBarMenu"]) {
-        [self showStatusBarMenu];
-    }
+	if ([defaults boolForKey:@"ShowStatusBarMenu"]) {
+		[self showStatusBarMenu];
+	}
 	
 	mousePollTimer =
 		[NSTimer scheduledTimerWithTimeInterval: pointerPollingInterval
@@ -574,61 +568,55 @@ void _reopenApplication(ProcessSerialNumber psn)
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
 {
-    [notifWindowTimer invalidate];
+	[notifWindowTimer invalidate];
 
-    [mousePollTimer invalidate];
-    [hidDevices release];
-    [mouseMoveXElements release];
-    [mouseMoveYElements release];
+	[mousePollTimer invalidate];
 }
 
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag
 {
-    [prefController openPreferenceWindow:self];
-    return NO;
+	[prefController openPreferenceWindow:self];
+	return NO;
 }
 
 
 - (void)showStatusBarMenu
 {
-    if (statusItem) return;
-    
-    NSStatusBar *bar = [NSStatusBar systemStatusBar];
-    statusItem = [bar statusItemWithLength:NSVariableStatusItemLength];
-    [statusItem retain];
-    [statusItem setImage:[NSImage imageNamed:@"StatusBarIcon"]];
-    [statusItem setHighlightMode:YES];
-    [statusItem setMenu:statusMenu];
+	if (statusItem) return;
+	
+	NSStatusBar *bar = [NSStatusBar systemStatusBar];
+	statusItem = [bar statusItemWithLength:NSVariableStatusItemLength];
+	[statusItem.button setImage:[NSImage imageNamed:@"StatusBarIcon"]];
+	[statusItem setMenu:statusMenu];
 }
 
 
 - (void)hideStatusBarMenu
 {
-    if (!statusItem) return;
-    
-    NSStatusBar *bar = [NSStatusBar systemStatusBar];
-    [bar removeStatusItem:statusItem];
-    [statusItem release];
-    statusItem = nil;
+	if (!statusItem) return;
+	
+	NSStatusBar *bar = [NSStatusBar systemStatusBar];
+	[bar removeStatusItem:statusItem];
+	statusItem = nil;
 }
 
 
 - (IBAction)showAboutPanel:sender
 {
-    [NSApp activateIgnoringOtherApps:YES];
-    [NSApp orderFrontStandardAboutPanel:self];
+	[NSApp activateIgnoringOtherApps:YES];
+	[NSApp orderFrontStandardAboutPanel:self];
 }
 
 
 - (NSMutableDictionary *)eventKeyDefs
 {
-    return eventKeyDefs;
+	return eventKeyDefs;
 }
 
 - (int)gestureSizeMin
 {
-    return gestureSizeMin;
+	return gestureSizeMin;
 }
 
 - setGestureSizeMin:(int)min

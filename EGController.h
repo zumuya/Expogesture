@@ -1,8 +1,8 @@
 /*
-    Copyright (C) 2003-2004 NAKAHASHI Ichiro
+	Copyright (C) 2003-2004 NAKAHASHI Ichiro
 
-    This program is distributed under the GNU Public License.
-    This program comes with NO WARRANTY.
+	This program is distributed under the GNU Public License.
+	This program comes with NO WARRANTY.
 */
 
 #import <Cocoa/Cocoa.h>
@@ -13,34 +13,33 @@
 
 @interface EGController : NSObject
 {
-    IBOutlet EGPreference *prefController;
-    IBOutlet EGNotificationView *notifView;
-    IBOutlet NSMenu *statusMenu;
-    IBOutlet FloatingWindow *notifWindow;
-    
-    NSMutableDictionary *eventKeyDefs;
-    NSArray *keyDefsGlobal;
-    unsigned long mouseMoveTimeout;
-    float pointerPollingInterval;
-    int gestureSizeMin;
-    
-    NSTimer *mousePollTimer;
-    NSTimer *notifWindowTimer;
-    NSMutableArray *hidDevices;
-    NSMutableArray *mouseMoveXElements;
-    NSMutableArray *mouseMoveYElements;
-    NSPoint lastMousePoint;
-    
-    unsigned long lastMouseMoveTimestamp;
-    float nowPhi, lastPhi, lastDPhi, lastSpeed;
-    int currentDirection, currentRotation, motionAmount;
-    float rotateAmount;
-    int lastMove;
-    unsigned long lastIssuedTimestamp, lastMoveTimestamp;
-    int *gestureProgresses;
-    BOOL sessionIsHidden;
-    
-    NSStatusItem *statusItem;
+	IBOutlet EGPreference *prefController;
+	IBOutlet EGNotificationView *notifView;
+	IBOutlet NSMenu *statusMenu;
+	IBOutlet FloatingWindow *notifWindow;
+	
+	NSMutableDictionary *eventKeyDefs;
+	NSArray *keyDefsGlobal;
+	unsigned long mouseMoveTimeout;
+	float pointerPollingInterval;
+	int gestureSizeMin;
+	
+	NSTimer *mousePollTimer;
+	NSTimer *notifWindowTimer;
+	NSMutableArray *mouseMoveXElements;
+	NSMutableArray *mouseMoveYElements;
+	NSPoint lastMousePoint;
+	
+	unsigned long lastMouseMoveTimestamp;
+	float nowPhi, lastPhi, lastDPhi, lastSpeed;
+	int currentDirection, currentRotation, motionAmount;
+	float rotateAmount;
+	int lastMove;
+	unsigned long lastIssuedTimestamp, lastMoveTimestamp;
+	int *gestureProgresses;
+	BOOL sessionIsHidden;
+	
+	NSStatusItem *statusItem;
 }
 
 - (void)dealloc;

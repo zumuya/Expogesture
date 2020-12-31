@@ -61,38 +61,38 @@
 		5D1B807604F4EE7900A81011 /* ZPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZPath.png; sourceTree = "<group>"; };
 		5D1B807804F4EE7F00A81011 /* NPath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NPath.png; sourceTree = "<group>"; };
 		5D4B1C26054A9C3100BEBFF4 /* Expogesture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expogesture.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D4C601504E8B79200A81011 /* FloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = FloatingWindow.h; sourceTree = "<group>"; };
-		5D4C601604E8B79200A81011 /* FloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = FloatingWindow.m; sourceTree = "<group>"; };
+		5D4C601504E8B79200A81011 /* FloatingWindow.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = FloatingWindow.h; sourceTree = "<group>"; };
+		5D4C601604E8B79200A81011 /* FloatingWindow.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.objc; path = FloatingWindow.m; sourceTree = "<group>"; };
 		5D5B099B05E5B99F00C21594 /* NSScreen-EGExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScreen-EGExt.h"; sourceTree = "<group>"; };
 		5D5B099C05E5B99F00C21594 /* NSScreen-EGExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSScreen-EGExt.m"; sourceTree = "<group>"; };
 		5D5F9AE204B04C6E00A81011 /* Expogesture.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Expogesture.icns; sourceTree = "<group>"; };
-		5D66B2A504AFFADA00A81011 /* EGPreference.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGPreference.m; sourceTree = "<group>"; };
-		5D66B2A604AFFADA00A81011 /* EGPreference.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGPreference.h; sourceTree = "<group>"; };
-		5D66B2A904AFFE6700A81011 /* HotkeyEvent.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HotkeyEvent.h; sourceTree = "<group>"; };
-		5D66B2AA04AFFE6700A81011 /* HotkeyEvent.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HotkeyEvent.m; sourceTree = "<group>"; };
+		5D66B2A504AFFADA00A81011 /* EGPreference.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.objc; path = EGPreference.m; sourceTree = "<group>"; };
+		5D66B2A604AFFADA00A81011 /* EGPreference.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = EGPreference.h; sourceTree = "<group>"; };
+		5D66B2A904AFFE6700A81011 /* HotkeyEvent.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = HotkeyEvent.h; sourceTree = "<group>"; };
+		5D66B2AA04AFFE6700A81011 /* HotkeyEvent.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.objc; path = HotkeyEvent.m; sourceTree = "<group>"; };
 		5D6F5C5304B5B3D900A81011 /* CounterClockwise.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = CounterClockwise.tiff; sourceTree = "<group>"; };
 		5D6F5C5504B5B45E00A81011 /* Clockwise.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Clockwise.tiff; sourceTree = "<group>"; };
-		5D80A580054E93B9002A1A0E /* HotkeyCapture.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = HotkeyCapture.h; sourceTree = "<group>"; };
-		5D80A581054E93B9002A1A0E /* HotkeyCapture.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = HotkeyCapture.m; sourceTree = "<group>"; };
+		5D80A580054E93B9002A1A0E /* HotkeyCapture.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = HotkeyCapture.h; sourceTree = "<group>"; };
+		5D80A581054E93B9002A1A0E /* HotkeyCapture.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.objc; path = HotkeyCapture.m; sourceTree = "<group>"; };
 		5D8A2EAF04D294D600A81011 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5D9B598A05E37AB800BABD08 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
 		5D9B598E05E37B6D00BABD08 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Japanese; path = Japanese.lproj/Credits.rtf; sourceTree = "<group>"; };
-		5DB17E6704AFAA9300A81011 /* EGController.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGController.h; sourceTree = "<group>"; };
-		5DB17E6804AFAA9300A81011 /* EGController.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGController.m; sourceTree = "<group>"; };
+		5DB17E6704AFAA9300A81011 /* EGController.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = EGController.h; sourceTree = "<group>"; };
+		5DB17E6804AFAA9300A81011 /* EGController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGController.m; sourceTree = "<group>"; };
 		5DB5B85804C69C5A00A81011 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		5DBCDD35054D3BA5008F4803 /* NotifPos0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos0.png; sourceTree = "<group>"; };
 		5DBCDD36054D3BA5008F4803 /* NotifPos1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos1.png; sourceTree = "<group>"; };
 		5DBCDD37054D3BA5008F4803 /* NotifPos2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos2.png; sourceTree = "<group>"; };
 		5DBCDD38054D3BA5008F4803 /* NotifPos3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos3.png; sourceTree = "<group>"; };
 		5DBCDD39054D3BA5008F4803 /* NotifPos4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifPos4.png; sourceTree = "<group>"; };
-		5DBD94F304B85F1700A81011 /* EGNotificationView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGNotificationView.m; sourceTree = "<group>"; };
-		5DBD94F404B85F1700A81011 /* EGNotificationView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGNotificationView.h; sourceTree = "<group>"; };
+		5DBD94F304B85F1700A81011 /* EGNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.objc; path = EGNotificationView.m; sourceTree = "<group>"; };
+		5DBD94F404B85F1700A81011 /* EGNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = EGNotificationView.h; sourceTree = "<group>"; };
 		5DC1139D04DD578D00A81011 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5DC7FCFB04C974E600A81011 /* StatusBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusBarIcon.png; sourceTree = "<group>"; };
 		5DCB912304E3433300A81011 /* EGCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGCommon.h; sourceTree = "<group>"; };
 		5DCB912504E3463A00A81011 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		5DD84D6504F3680700A81011 /* EGAppTableView.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGAppTableView.h; sourceTree = "<group>"; };
-		5DD84D6604F3680700A81011 /* EGAppTableView.m */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.objc; path = EGAppTableView.m; sourceTree = "<group>"; };
+		5DD84D6504F3680700A81011 /* EGAppTableView.h */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.h; path = EGAppTableView.h; sourceTree = "<group>"; };
+		5DD84D6604F3680700A81011 /* EGAppTableView.m */ = {isa = PBXFileReference; fileEncoding = 18446744071562067969; lastKnownFileType = sourcecode.c.objc; path = EGAppTableView.m; sourceTree = "<group>"; };
 		5DD8963004F107E100A81011 /* DefaultDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = DefaultDefaults.plist; sourceTree = "<group>"; };
 		5DEB88970553DE6A002882FF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5DEE968404B5B71400A81011 /* Horizontal.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Horizontal.tiff; sourceTree = "<group>"; };
@@ -269,7 +269,11 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 5DF102890855751900A9BAF4 /* Build configuration list for PBXProject "Expogesture" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -280,6 +284,7 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Expogesture */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				5D4B1BF7054A9C3100BEBFF4 /* Expogesture */,
 			);
@@ -425,12 +430,9 @@
 		5DF1028A0855751900A9BAF4 /* Development */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Development;
@@ -438,12 +440,9 @@
 		5DF1028B0855751900A9BAF4 /* Deployment */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Deployment;
@@ -451,12 +450,9 @@
 		5DF1028C0855751900A9BAF4 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Default;

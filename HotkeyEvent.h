@@ -1,18 +1,18 @@
 /*
-    Copyright (C) 2003-2004 NAKAHASHI Ichiro
+	Copyright (C) 2003-2004 NAKAHASHI Ichiro
 
-    This program is distributed under the GNU Public License.
-    This program comes with NO WARRANTY.
+	This program is distributed under the GNU Public License.
+	This program comes with NO WARRANTY.
 */
 
 #import <Cocoa/Cocoa.h>
 
 struct hotkeyDef_t {
-    NSString *keyName;
-    CGCharCode charCode;
-    CGKeyCode keyCode;
-    BOOL needShift;
-    BOOL canShift;
+	NSString *keyName;
+	CGCharCode charCode;
+	CGKeyCode keyCode;
+	BOOL needShift;
+	BOOL canShift;
 };
 extern struct hotkeyDef_t hotkeyDefs[];
 extern int hotkeyDefsCount;
@@ -27,15 +27,15 @@ typedef enum _HotkeyPseudoEventType {
 
 @interface HotkeyEvent : NSObject <NSCopying>
 {
-    NSString *keyName;
-    BOOL ctrl;
-    BOOL alt;
-    BOOL cmd;
-    BOOL shift;
-    BOOL canShift;
-    CGCharCode charCode;
-    CGKeyCode keyCode;
-    HotkeyPseudoEventType pseudoEventType;
+	NSString *keyName;
+	BOOL ctrl;
+	BOOL alt;
+	BOOL cmd;
+	BOOL shift;
+	BOOL canShift;
+	CGCharCode charCode;
+	CGKeyCode keyCode;
+	HotkeyPseudoEventType pseudoEventType;
 	NSString *menuLabel;
 	
 	// attributes below are temporal; not archived into dictionary
@@ -48,11 +48,10 @@ typedef enum _HotkeyPseudoEventType {
 + (NSString *)keyNameAtIndex:(int)index;
 + (int)indexOfKeyName:(NSString *)keyName;
 + (NSArray *)hotkeyArrayWithArray:(NSArray *)anArray
-        count:(int)count global:(BOOL)gFlag;
+		count:(int)count global:(BOOL)gFlag;
 
 - (HotkeyEvent *)initWithKeyName:(NSString *)keyName
-        ctrl:(BOOL)ctrlFlag alt:(BOOL)altFlag cmd:(BOOL)cmdFlag;
-- (void)dealloc;
+		ctrl:(BOOL)ctrlFlag alt:(BOOL)altFlag cmd:(BOOL)cmdFlag;
 - initWithDictionary:(NSDictionary *)dict;
 - (NSDictionary *)dictionary;
 - copyWithZone:(NSZone *)zone;
