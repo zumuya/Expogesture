@@ -118,20 +118,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5D80A580054E93B9002A1A0E /* HotkeyCapture.h */,
-				5D80A581054E93B9002A1A0E /* HotkeyCapture.m */,
 				5DB17E6704AFAA9300A81011 /* EGController.h */,
 				5DB17E6804AFAA9300A81011 /* EGController.m */,
-				5D66B2A604AFFADA00A81011 /* EGPreference.h */,
-				5D66B2A504AFFADA00A81011 /* EGPreference.m */,
 				5D66B2A904AFFE6700A81011 /* HotkeyEvent.h */,
 				5D66B2AA04AFFE6700A81011 /* HotkeyEvent.m */,
-				5DBD94F404B85F1700A81011 /* EGNotificationView.h */,
-				5DBD94F304B85F1700A81011 /* EGNotificationView.m */,
-				5D4C601504E8B79200A81011 /* FloatingWindow.h */,
-				5D4C601604E8B79200A81011 /* FloatingWindow.m */,
-				5DD84D6504F3680700A81011 /* EGAppTableView.h */,
-				5DD84D6604F3680700A81011 /* EGAppTableView.m */,
+				7857BD87259DFEFC00301C8B /* Preferences Window */,
+				7857BD88259E000D00301C8B /* Notification Overlay */,
 				5D5B099B05E5B99F00C21594 /* NSScreen-EGExt.h */,
 				5D5B099C05E5B99F00C21594 /* NSScreen-EGExt.m */,
 			);
@@ -220,6 +212,30 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7857BD87259DFEFC00301C8B /* Preferences Window */ = {
+			isa = PBXGroup;
+			children = (
+				5D66B2A604AFFADA00A81011 /* EGPreference.h */,
+				5D66B2A504AFFADA00A81011 /* EGPreference.m */,
+				5D80A580054E93B9002A1A0E /* HotkeyCapture.h */,
+				5D80A581054E93B9002A1A0E /* HotkeyCapture.m */,
+				5DD84D6504F3680700A81011 /* EGAppTableView.h */,
+				5DD84D6604F3680700A81011 /* EGAppTableView.m */,
+			);
+			path = "Preferences Window";
+			sourceTree = "<group>";
+		};
+		7857BD88259E000D00301C8B /* Notification Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				5DBD94F404B85F1700A81011 /* EGNotificationView.h */,
+				5DBD94F304B85F1700A81011 /* EGNotificationView.m */,
+				5D4C601504E8B79200A81011 /* FloatingWindow.h */,
+				5D4C601604E8B79200A81011 /* FloatingWindow.m */,
+			);
+			path = "Notification Overlay";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
