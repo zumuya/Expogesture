@@ -51,8 +51,6 @@
 	IBOutlet NSButton *usePolling;
 	IBOutlet NSSlider *gestureSizeMin;
 	IBOutlet NSTextField *gestureSizeMinLabel;
-	IBOutlet NSButton *bringAllCheck;
-	IBOutlet NSButton *createNewCheck;
 	IBOutlet NSImageView *notifWinPreview;
 	IBOutlet NSMatrix *notifWinPosMatrix;
 	
@@ -72,8 +70,6 @@
 - (IBAction)removeApplication:(id)sender;
 - (IBAction)tableSelected:(id)sender;
 - (IBAction)gestureSizeChanged:sender;
-- (IBAction)bringAllCheckSelected:sender;
-- (IBAction)createNewCheckSelected:sender;
 - (IBAction)notifWinPosChanged:sender;
 
 - (int)numberOfRowsInTableView:(NSTableView *)tableView;

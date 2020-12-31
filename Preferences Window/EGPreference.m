@@ -77,8 +77,6 @@
 
 - (void)awakeFromNib
 {
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	
 	pseudoEventPopUpArray = [[NSArray alloc] initWithObjects:
 			rightPseudoPopUp, leftPseudoPopUp,
 			horizontalPseudoPopUp, verticalPseudoPopUp,
@@ -105,10 +103,6 @@
 	
 	[gestureSizeMin setIntValue:[appController gestureSizeMin]];
 	[gestureSizeMinLabel setIntValue:[appController gestureSizeMin]];
-	[bringAllCheck setState:
-			[defaults boolForKey:@"BringsAllWindowsToFront"]];
-	[createNewCheck setState:
-			[defaults boolForKey:@"CreatesNewDocumentIfNone"]];
 
 	[appTable registerForDraggedTypes:
 			[NSArray arrayWithObject:NSPasteboardTypeFileURL]];
@@ -141,10 +135,6 @@
 	
 	[defaults setInteger:[gestureSizeMin intValue]
 			forKey:@"GestureSizeMin"];
-	[defaults setBool:[bringAllCheck state]
-			forKey:@"BringsAllWindowsToFront"];
-	[defaults setBool:[createNewCheck state]
-			forKey:@"CreatesNewDocumentIfNone"];
 	
 	[defaults synchronize];
 	
@@ -292,16 +282,6 @@
 {
 	[appController setGestureSizeMin:[sender intValue]];
 	[gestureSizeMinLabel setIntValue:[sender intValue]];
-}
-
-- (IBAction)bringAllCheckSelected:sender
-{
-
-}
-
-- (IBAction)createNewCheckSelected:sender
-{
-
 }
 
 - (int)numberOfRowsInTableView:(NSTableView *)tableView

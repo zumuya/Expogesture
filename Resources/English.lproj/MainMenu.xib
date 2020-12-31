@@ -719,43 +719,8 @@
                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>
-                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="633">
-                                            <rect key="frame" x="155" y="96" width="325" height="17"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="Task Switch" id="871">
-                                                <font key="font" metaFont="systemBold"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="634">
-                                            <rect key="frame" x="165" y="58" width="329" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Bring all windows to front" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="872">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="bringAllCheckSelected:" target="276" id="642"/>
-                                            </connections>
-                                        </button>
-                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="637">
-                                            <rect key="frame" x="165" y="36" width="329" height="18"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <buttonCell key="cell" type="check" title="Create new document if none" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="873">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="createNewCheckSelected:" target="276" id="643"/>
-                                            </connections>
-                                        </button>
                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="638">
                                             <rect key="frame" x="155" y="289" width="337" height="5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </box>
-                                        <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="711">
-                                            <rect key="frame" x="155" y="119" width="337" height="5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </box>
                                         <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="713">
@@ -864,8 +829,6 @@
             <connections>
                 <outlet property="appController" destination="197" id="280"/>
                 <outlet property="appTable" destination="397" id="423"/>
-                <outlet property="bringAllCheck" destination="634" id="640"/>
-                <outlet property="createNewCheck" destination="637" id="641"/>
                 <outlet property="gestureSizeMin" destination="467" id="521"/>
                 <outlet property="gestureSizeMinLabel" destination="526" id="527"/>
                 <outlet property="horizontalCapture" destination="740" id="752"/>
