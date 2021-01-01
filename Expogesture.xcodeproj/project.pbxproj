@@ -408,6 +408,7 @@
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				OPTIMIZATION_CFLAGS = "-O0";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zumuya.Expogesture-betaA";
 				PRODUCT_NAME = Expogesture;
 				WARNING_CFLAGS = "-Wmost";
 				WRAPPER_EXTENSION = app;
@@ -427,6 +428,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zumuya.Expogesture-betaA";
 				PRODUCT_NAME = Expogesture;
 				WARNING_CFLAGS = "-Wmost";
 				WRAPPER_EXTENSION = app;
@@ -443,6 +445,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zumuya.Expogesture-betaA";
 				PRODUCT_NAME = Expogesture;
 				WARNING_CFLAGS = "-Wmost";
 				WRAPPER_EXTENSION = app;

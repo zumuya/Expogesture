@@ -417,8 +417,10 @@ pickMenu:
 	self = [super init];
 
 	// Check if Expogesture is already running
-	NSMutableArray<NSRunningApplication*>* otherInstances = [NSRunningApplication runningApplicationsWithBundleIdentifier: NSBundle.mainBundle.bundleIdentifier].mutableCopy;
-	[otherInstances removeObject: NSRunningApplication.currentApplication];
+	NSMutableArray<NSRunningApplication*>* otherInstances = NSWorkspace.sharedWorkspace.runningApplications.mutableCopy; {
+		[otherInstances filterUsingPredicate: [NSPredicate predicateWithFormat: @"bundleIdentifier CONTAINS %@", @"Expogesture"]];
+		[otherInstances removeObject: NSRunningApplication.currentApplication];
+	}
 	if (otherInstances.count > 0) {
 		[otherInstances.firstObject activateWithOptions: NSApplicationActivateAllWindows];
 		[NSApp terminate:self];

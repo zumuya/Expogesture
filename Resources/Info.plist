@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>CFBundleExecutable</key>
@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>Expogesture</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.nnip.Expogesture</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -19,7 +19,8 @@
 	<key>CFBundleVersion</key>
 	<string>41</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright 2003-2006 NAKAHASHI Ichiro.</string>
+	<string>©︎ 2003-2006 NAKAHASHI Ichiro
+©︎ 2020-2021 zumuya</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
