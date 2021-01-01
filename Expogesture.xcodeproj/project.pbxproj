@@ -102,6 +102,7 @@
 		7857BD83259D92C800301C8B /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		7857BD8A259E056B00301C8B /* NotificationWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationWindowController.m; sourceTree = "<group>"; };
 		7857BD8D259E058100301C8B /* NotificationWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationWindowController.h; sourceTree = "<group>"; };
+		7898DECB259F32A600603347 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +164,7 @@
 		29B97314FDCFA39411CA2CEA /* Expogesture */ = {
 			isa = PBXGroup;
 			children = (
+				7898DECB259F32A600603347 /* README.md */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
